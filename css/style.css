@@ -3,7 +3,7 @@
 }
 
 html, body {
-  background-color: #eee;
+  background-color: #f5f5f5;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -29,15 +29,15 @@ html, body {
   left: 0;
   z-index: 101;
   height: 50px;
-  background-color: #e4e4e4;
-  border-bottom: 1px solid #cecece;
+  background-color: #eeeeee;
+  border-bottom: 2px solid #bdbdbd;
 }
 
 #overlay {
   display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -52,13 +52,14 @@ html, body {
   visibility: hidden;
   width: 300px;
   height: 100%;
-  background: #434343;
-  color: white;
+  background: #eeeeee;
+  color: black;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
   padding: 10px;
+  border-right: 2px solid #bdbdbd;
 }
 
 #menu-btn {
