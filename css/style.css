@@ -11,6 +11,16 @@ html, body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+ul{
+  list-style-type: none;
+}
+
+a{
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
 #logo {
   height: 30px;
   position: relative;
