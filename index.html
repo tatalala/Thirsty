@@ -5,13 +5,19 @@
 
   <meta charset="UTF-8">
 
-  <title>Pure CSS Android Navigation Drawer - CodePen</title>
+  <title>Thirst Project Application</title>
 
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 	<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 
+=======
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  
+>>>>>>> 093f84b078a04a1604a75d29257ba40f9688f6fc
 </head>
 
 
@@ -58,5 +64,28 @@
   
 
 </body>
-
 </html>
+
+<script>
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	function onDeviceReady() {
+		document.addEventListener("pause", onPause, false);
+		document.addEventListener("resume", onResume, false);
+		alert("Device is Ready");
+
+	}
+
+//What to do when paused
+function onPause(){
+	
+	alert("paused!");
+}
+
+//What to do when resumed
+function onResume()
+{
+	
+	alert("resume");
+}
+</script>
