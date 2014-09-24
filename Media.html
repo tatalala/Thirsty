@@ -3,37 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Thirst Project - Media</title>
-	  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
-
 	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/custom.css" media="screen" type="text/css" />
+	<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
   </head>
-    <input id='menu-checkbox' type='checkbox'>
-  <nav id='menu'>
-
-  <ul>
-    <li><a href="classic.html">Inspire & Inform</a></li>
-	<li><a href="about.html">Our Story</a></li>
-	<li><a href="Media.html">Media</a></li>
-  </ul>
-  </nav>
-  <label for='menu-checkbox' id='overlay'></label>
-  <div id='header'>
-    <label for='menu-checkbox' id='menu-btn'>
-      <span id='three-lines'>&#8801;</span>
-      <img id="logo" src="assets/logo.png">
-    </label>
-  </div>
-  
+    
   <body>
-
+  <script>
+      $(function(){
+        $("#navbar").load("navbar.html");
+      });
+    </script>
+    <div id="navbar"></div>
+  <br>
  
- <div>
+ <div class="container">
+   <div class="text-center">
    <h1>Follow Us!</h1>
-   <div class="container">
-
+   <div>
    <hr>
-
       <a href="https://www.twitter.com/ThirstProject" class="icon-button twitter">
         <i class="fa fa-twitter"></i><span></span>
       </a>
@@ -53,8 +41,9 @@
         <span></span>
       </a>
 	  </div>
+	  </div>
 	</div>
-    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+    
 	
   </body>
 </html>

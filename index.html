@@ -14,26 +14,12 @@
 </head>
 
 <body>
-
-<input id='menu-checkbox' type='checkbox'>
-<nav id='menu'>
-
-
-  
-  <ul>
-    <li><a href="classic.html">Inspire & Inform</a></li>
-	<li><a href="about.html">Our Story</a></li>
-	<li><a href="Media.html">Media</a></li>
-
-</nav>
-<label for='menu-checkbox' id='overlay'></label>
-<div id='header'>
-  <label for='menu-checkbox' id='menu-btn'>
-    <span id='three-lines'>&#8801;</span>
-    <img id="logo" src="assets/logo.png">
-  </label>
-</div>
-
+   <script>
+      $(function(){
+        $("#navbar").load("navbar.html");
+      });
+    </script>
+	<div id="navbar"></div>
 <div id='content'>
   <ul id='items'>
     <li>#1</li>
