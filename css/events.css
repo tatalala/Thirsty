@@ -1,0 +1,29 @@
+
+body{
+
+}
+
+li {
+    list-style-type: none;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    min-height: 300px;
+    width: 95%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 15px;
+}
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: left;
+}
+
+form{
+    margin-left: 25%;
+    margin-right:25%;
+    width: 100%;
+}
