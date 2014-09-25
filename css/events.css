@@ -3,7 +3,7 @@ body{
 
 }
 
-/*li {
+li {
     list-style-type: none;
     background-color: white;
     border: 2px solid #ddd;
@@ -13,7 +13,7 @@ body{
     margin-bottom: 20px;
     padding: 10px;
     font-size: 15px;
-}*/
+}
 h1{
     text-align: center;
 }
