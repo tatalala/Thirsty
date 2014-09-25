@@ -16,9 +16,22 @@ ul{
 }
 
 a{
+  font-size: 25px;
   display: block;
   width: inherit;
   height: inherit;
+  padding-left: 10px;
+  color: #000000;
+}
+
+a:visited{
+  color: #000000;
+}
+a:hover{
+  color: #000000;
+}
+a:active{
+  color: #000000;
 }
 
 #logo {
@@ -74,8 +87,8 @@ a{
 
 #menu-btn {
   background-color: transparent;
-  border: none;
-  color: #222;
+  border:thin;
+  color: #000000;
   font-size: 30px;
   font-weight: 300;
   line-height: 1.6em;
