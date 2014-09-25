@@ -9,9 +9,11 @@
 
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
 
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-	<script src='js/jquery-2.1.1.js'></script>
-
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  <script src='js/jquery-2.1.1.js'></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  
+  
 </head>
 
 
@@ -34,9 +36,28 @@
     <li>#5</li>
   </ul>
 </div>
-
-  
-
 </body>
-
 </html>
+
+<script>
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	function onDeviceReady() {
+		document.addEventListener("pause", onPause, false);
+		document.addEventListener("resume", onResume, false);
+		alert("Device is Ready");
+
+	}
+//What to do when paused
+function onPause(){
+	
+	alert("paused!");
+}
+
+//What to do when resumed
+function onResume()
+{
+	
+	alert("resume");
+}
+</script>
