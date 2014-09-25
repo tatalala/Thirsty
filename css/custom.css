@@ -7,6 +7,9 @@ body {
   padding: 50px;
   text-align: left;
 }
+p {
+  font-size: 20px;
+}
 
 /* Wrapper */
 .icon-button {
