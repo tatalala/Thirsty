@@ -160,14 +160,12 @@
   page-break-inside: avoid;
   max-width: 100% !important;
   max-height: 100% !important;
-  vertical-align: middle;
-  margin-left: 1px;
-  margin-right: 2px;
-  margin-bottom: 8px;
+  vertical-align: auto;
+  margin-top: 15px;
 }
 
 .img-rounded {
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .text-center {
