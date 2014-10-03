@@ -1,5 +1,26 @@
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:visited{
+  color: #000000;
+}
+a:hover{
+  color: #000000;
+}
+a:active{
+  color: #000000;
+}
+::selection{
+  color:transparent;
+  background-color: transparent;
+
+}
+div::selection{
+  color:transparent;
+  background-color: transparent;
 }
 
 html, body {
@@ -16,7 +37,6 @@ ul{
 }
 
 a{
-  -webkit-tap-highlight-color: #33acaf;
   display: block;
   width: inherit;
   height: inherit;

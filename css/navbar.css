@@ -1,21 +1,4 @@
 
-a:visited{
-  color: #000000;
-}
-a:hover{
-  color: #000000;
-}
-a:active{
-  color: #000000;
-}
-::selection{
-  color:transparent;
-  background-color: transparent;
-}
-div::selection{
-  color:transparent;
-  background-color: transparent;
-}
 form{
   margin-bottom: -20px;
   font-size: 15px;
