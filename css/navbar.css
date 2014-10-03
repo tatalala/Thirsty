@@ -4,13 +4,15 @@ form{
   font-size: 15px;
 }
 #three-lines{
+  vertical-align: middle;
   left: -10px;
 }
 #logo {
+  vertical-align: middle;
   height: 30px;
   position: relative;
-  top: 4px;
-  left: -5px;
+  
+  left: -8px;
 }
 
 #menu-checkbox {
