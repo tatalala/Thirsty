@@ -16,6 +16,7 @@ ul{
 }
 
 a{
+  -webkit-tap-highlight-color: #33acaf;
   display: block;
   width: inherit;
   height: inherit;
