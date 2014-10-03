@@ -14,18 +14,12 @@
     <preference name="android-minSdkVersion"      value="7" />
     <preference name="android-targetSdkVersion"   value="19" />
     <preference name="android-maxSdkVersion"      value="19" />
-    <preference name="android-installLocation" value="auto" />
-    <preference name="splash-screen-duration" value="3000"/>
+    <preference name="android-installLocation"    value="auto" />
+    <preference name="splash-screen-duration"     value="1000"/>
     
     <icon src="icon.png" />
-    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="ldpi" />
-    <gap:splash src="ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
-    <gap:splash src="mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
-    <gap:splash src="hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
-    <gap:splash src="xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
-    <gap:splash src="fr-xhdpi.png" gap:platform="android" gap:qualifier="fr-xhdpi" />
-    <gap:splash src="portrait-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-    <gap:splash src="landscape-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi" />
+    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="xhdpi" />
+    
     
     
 </widget>
