@@ -9,31 +9,43 @@
 		<link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
 		<script src='js/jquery-2.1.1.js'></script>
 
+    	<script type="text/javascript">
+	    	$(document).ready(function()
+	    	{
+	    		alert($(".item span").text());
+	    	});
+    	
+  			//log in/sign up dropdown 
+			$(function(){
+				$('#mySlideContent').hide();
+				$('#mySlideToggler').click(function(){
+				$('#mySlideContent').slideToggle('slow');
+				$(this).toggleClass('#mySlideContent');
+				return false;
+				});
+			});
+
+		</script>
+
 	</head>
 	
 	<body>
 		<div id='header'>
 		  	<label for='menu-checkbox' id='menu-btn' class="navbar-brand">
-		    	<span id='three-lines'>&#8801;</span>
+		    	<span id='three-lines'>&#8801;</span> 
 		    	<img id="logo" src="icon.png">
 		  	</label>
 		</div>
 
-
 		<input id='menu-checkbox' type='checkbox'>
 		<nav id='menu'>
-
-
-
-
-
 
 			<div id='login-div'>
 			<div id="mySlideToggler">
 				<a> Login or Sign-up </a>
 			</div>
 			<div id="mySlideContent" align="right">
-				<form>
+				<form onclick="">
 					Email: <input type="email"name="email"size="20" maxlength="254">
 				</form>
 
@@ -47,11 +59,6 @@
 			</div>
 			    
 
-
-
-
-
-
 		    <div id='menu-btn'>
 		    	<a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
             <div id='menu-btn'>
@@ -62,22 +69,7 @@
 				<a href="about.html" style = "text-decoration:none;">Our Story</a></div>
 		</nav>
 		
-
-
 		<label for='menu-checkbox' id='overlay'></label>
-	
-
-		<script type="text/javascript">
-			$(function(){
-				$('#mySlideContent').hide();
-				$('#mySlideToggler').click(function(){
-				$('#mySlideContent').slideToggle('slow');
-				$(this).toggleClass('#mySlideContent');
-				return false;
-				});
-			});
-
-</script>
 
 	</body>
 </html>
