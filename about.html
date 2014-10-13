@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Thirst Project - Our Story</title>
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-    <link rel="stylesheet" href="css/custom.css" media="screen" type="text/css" />
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
+    <!-- <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> -->
     
+    <!-- <link rel="stylesheet" href="css/about.css" media="screen" type="text/css" /> -->
+        
     <script src='js/jquery-2.1.1.js'></script>
     
   </head>
@@ -13,14 +15,14 @@
     <script>
       $(function(){
         $("#navbar").load("navbar.html");
+        $("#socialBtns").load("socialBtns.html");
       });
     </script>
     <div id="navbar"></div>
-		
 	
     <div class="container"> 
       <br/><br/>
-      <h2 class="text-center">Our story.</h2> 
+      <h1 class="text-center">Our story.</h1> 
 
       <p class="text-center">As a 19 year-old college student living in one of the most expensive cities in the world with absolutely no money, all I could think was, “What can one person really do?” I didn’t really know, but I couldn’t live with this new knowledge inside of me and not act. So, I gathered seven of my closest college friends together and we decided to tell these people’s story. We pooled all of our money together (which literally amounted to $70) and were able to purchase 1,000 bottles of water. We took to Hollywood Boulevard and began giving them away for free just to get people to talk to us. We raised awareness to over 1,000 people about the water crisis that day and were able to turn $70, into $1,700. This was used to fund our first rehabilitation of a freshwater well.
       <br><br>
@@ -37,26 +39,7 @@
 	  <br>
 
       <hr/><br/>
-      <div class="text-center">
-        <a href="https://www.twitter.com/ThirstProject" class="icon-button twitter">
-          <i class="fa fa-twitter fa-fw"></i><span></span>
-        </a>
-        
-        <a href="http://facebook.com/ThirstProject" class="icon-button facebook">
-          <i class="fa fa-facebook"></i><span></span>
-        </a>
-
-        <a href="http://www.youtube.com/user/ThirstProject" class="icon-button youtube">
-          <i class="fa fa-youtube-square"></i><span></span>
-        </a>
-
-        <a href="http://www.thirstproject.org/" class="icon-button thirst">
-          <i class="fa fa-lg fa-fw"> 
-            <img class="img-circle" width="70" height="70" src="./assets/whiteLogo.png" alt="" class="img-rounded" /></img>
-          </i>
-          <span></span>
-        </a>
-      </div>
+      <div id="socialBtns"></div>
     </div>
   </body>
 </html>

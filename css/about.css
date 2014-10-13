@@ -1,19 +1,4 @@
 /*for social media links/btns*/
-html {
-  font-size: 20px;
-}
-body {
-  background-color: #ccc;
-  padding: 50px;
-  text-align: left;
-}
-p {
-  font-size: 16px;
-}
-h1{
-  font-size: 25px;
-}
-
 /* Wrapper */
 .icon-button {
   background-color: #696969;
@@ -171,25 +156,16 @@ h1{
   border-radius: 50%;
 }
 
-tr,
-img {
-    page-break-inside: avoid;
-}
-
-img {
-    max-width: 100% !important;
-    max-height: 100% !important;
-}
-
-img {
-  vertical-align: middle;
-  margin-left: 1px;
-  margin-right: 2px;
-  margin-bottom: 8px;
+#icons{
+  page-break-inside: avoid;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  vertical-align: auto;
+  margin-top: 15px;
 }
 
 .img-rounded {
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .text-center {
