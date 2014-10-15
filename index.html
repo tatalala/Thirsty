@@ -18,13 +18,19 @@
 
 
 <body>
-   <script>
-      $(function(){
-        $("#navbar").load("navbar.html");
-      });
+
+   <script type="text/javascript">
+       
+       $(function() {
+            $("#navbarLog").load("navbarLog.html");
+            });
+       
     </script>
-	<div id="navbar"></div>
-	<script type="text/javascript">
+   
+    <div id="navbarLog">
+
+	<!--
+<script type="text/javascript">
         Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
         var TestObject = Parse.Object.extend("TestObject");
 var testObject = new TestObject();
@@ -32,7 +38,7 @@ testObject.save({foo: "bar"}).then(function(object) {
   alert("yay! it worked");
 });
     </script>
-
+-->
 	
 <div id='content'>
   <ul id='items'>
