@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/signup.css" media="screen" type="text/css" />
     <script src='js/jquery-2.1.1.js'></script>
+<<<<<<< HEAD
     <script src='js/parse.min.js'></script>
+=======
+    <script src="js/parse.min.js"></script>
+>>>>>>> e57c828bfad054f2b87b8c154ee1a1c3704c9b4a
   </head>
   <body>
 
@@ -28,6 +32,7 @@
     <h1>Sign Up!</h1>
     <div id="forms" align="center"> 
    
+<<<<<<< HEAD
         <form name="signUp" action="javascript:signUp1()">
                     <fieldset>
 					User Name: <input type="username" name="username" id="1" size="20"> <br>
@@ -37,9 +42,37 @@
                     <button type="submit" id="signup" value="submit" align="center"> Submit </button>
                    </fieldset>
                 </form>
+=======
+    <fieldset id="field">
+
+    <form action="javascript:signUp2()">
+      <label>Username</label> <br>
+      <input name="username" id="1" size="20" maxlength="20">
+
+  	<br>
+        <label>Email</label> <br>
+      <input id="3" type="email" name="email" size="20" maxlength="254">
+		<br>
+
+			<label>Password</label> <br>
+      <input type="password" id="2" name="pass" size="20">
+		<br>
+
+			<label>Confirm Password</label> <br>
+      <input type="password" id="4" name="pass_confirm" size="20">
+		</form>
+		<br>
+        <br>
+        <button type="submit" value="submit" align="center">Submit</button>
+
+
+    </fieldset>
+
+>>>>>>> e57c828bfad054f2b87b8c154ee1a1c3704c9b4a
 
  	</div>
 	</div>
+<<<<<<< HEAD
       
         <script>
                   Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
@@ -65,6 +98,31 @@
                 };
             </script>
 
+=======
+      <script>
+        Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+                
+                 function signUp2(){
+                    var user = new Parse.User();
+                    var confirmPass = document.getElementById('4').value);
+                    user.set("username", document.getElementById('1').value);
+                    user.set("password", document.getElementById('2').value);
+                    user.set("email", document.getElementById('3').value);
+                    //if(confirmPass == document.getElementById('2')){
+                         user.signUp(null,
+                        {
+                            success: function(user) 
+                            {
+                                alert("cool");
+                            },
+                            error: function(user, error) 
+                            {
+                                alert("Error: " + error.code + " " + error.message);
+                            }
+                        });
+                };
+            </script>
+>>>>>>> e57c828bfad054f2b87b8c154ee1a1c3704c9b4a
   <script data-main="scripts/main" src="js/require.js"></script>
   <script type="text/javascript" src="js/skrollr.js"></script>
   <script type="text/javascript">
