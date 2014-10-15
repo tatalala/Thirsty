@@ -1,104 +1,101 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Thirst Project</title>
-		<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
-		<link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
-		<link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
-		<script src='js/jquery-2.1.1.js'></script>
-        <script src='js/parse.min.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Thirst Project</title>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
+    <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
+    <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
+    <script src='js/jquery-2.1.1.js'></script>
+    <script src='js/parse.min.js'></script>
 
-	</head>
-	
-	<body>
-		<div id='header'>
-		  	<label for='menu-checkbox' id='menu-btn' class="navbar-brand">
-		    	<span id='three-lines'>&#8801;</span>
-		    	<img id="logo" src="icon.png">
-		  	</label>
-		</div>
+</head>
 
-
-		<input id='menu-checkbox' type='checkbox'>
-		<nav id='menu'>
+<body>
+    <div id='header'>
+        <label for='menu-checkbox' id='menu-btn' class="navbar-brand">
+            <span id='three-lines'>&#8801;</span>
+            <img id="logo" src="icon.png">
+        </label>
+    </div>
 
 
+    <input id='menu-checkbox' type='checkbox'>
+    <nav id='menu'>
 
 
 
 
-			<div id='login-div'>
-			<div id="mySlideToggler">
-				<a> Login </a>
-			</div>
-			<div id="mySlideContent" align="right">
-                  <form name="LogIn" action="javascript:logIn()">
-                      <fieldset>
-					User Name: <input type="username" name="username" id="1" size="20">
-					Password: <input type="password" name="userpass" id="2" size="20" maxlength="254">
-				   
-                    <button type="submit" id="signup" value="submit"> Log In </button>
+
+
+        <div id='login-div'>
+        <div id="mySlideToggler">
+            <a> Login </a>
+        </div>
+        <div id="mySlideContent" align="left">
+              <form name="LogIn" action="javascript:logIn()" method="get">
+                <fieldset>
+                    <input type="username" name="username" placeholder="Username" id="1" size="20" required>
+                    <input type="password" name="userpass" placeholder="Password" id="2" size="20" maxlength="254" required>
                     <input type="button" value="Sign Up" onclick="location.href='signup.html'">
+                    <button type="submit" id="signup" value="submit"> Log In </button>
+                </fieldset>
+              </form>
+        </div>
+        </div>
 
-                    </fieldset>
-                </form>
-                 
-			</div>
-			</div>
-			    
-            <script>
-                  Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-                
-                 function logIn(){
-                    //var user = new Parse.User();
-               
-                     Parse.User.logIn(document.getElementById('1').value, document.getElementById('2').value,
+        <script>
+              Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+
+             function logIn(){
+                //var user = new Parse.User();
+
+                 Parse.User.logIn(document.getElementById('1').value, document.getElementById('2').value,
+                {
+                    success: function(user) 
                     {
-                        success: function(user) 
-                        {
-                            alert("Logged in!!!!");
-                        },
-                        error: function(user, error) 
-                        {
-                            alert("Error: " + error.code + " " + error.message);
-                        }
-                    });
-                };
-            </script>
-	
+                        alert("Logged in!!!!");
+                    },
+                    error: function(user, error) 
+                    {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            };
+        </script>
 
 
 
 
 
-		    <div id='menu-btn'>
-		    	<a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
-            <div id='menu-btn'>
-				<a href="media.html" style = "text-decoration:none;"> Media</a></div>
-            <div id='menu-btn'>
-				<a href="events.html" style = "text-decoration:none;">Events</a></div>
-            <div id='menu-btn'>
-				<a href="about.html" style = "text-decoration:none;">Our Story</a></div>
-		</nav>
-		
+
+        <div id='menu-btn'>
+            <a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
+        <div id='menu-btn'>
+            <a href="media.html" style = "text-decoration:none;"> Media</a></div>
+        <div id='menu-btn'>
+            <a href="events.html" style = "text-decoration:none;">Events</a></div>
+        <div id='menu-btn'>
+            <a href="about.html" style = "text-decoration:none;">Our Story</a></div>
+    </nav>
 
 
-		<label for='menu-checkbox' id='overlay'></label>
-	
 
-		<script type="text/javascript">
-			$(function(){
-				$('#mySlideContent').hide();
-				$('#mySlideToggler').click(function(){
-				$('#mySlideContent').slideToggle('slow');
-				$(this).toggleClass('#mySlideContent');
-				return false;
-				});
-			});
+    <label for='menu-checkbox' id='overlay'></label>
+
+
+    <script type="text/javascript">
+        $(function(){
+            $('#mySlideContent').hide();
+            $('#mySlideToggler').click(function(){
+            $('#mySlideContent').slideToggle('slow');
+            $(this).toggleClass('#mySlideContent');
+            return false;
+            });
+        });
 
 </script>
 
-	</body>
+</body>
 </html>

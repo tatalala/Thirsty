@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/signup.css" media="screen" type="text/css" />
     <script src='js/jquery-2.1.1.js'></script>
-<<<<<<< HEAD
-    <script src='js/parse.min.js'></script>
     <script src="js/parse.min.js"></script>
->>>>>>> e57c828bfad054f2b87b8c154ee1a1c3704c9b4a
   </head>
   <body>
 
@@ -21,7 +18,6 @@
       });
     </script>
     <div id="navbar"></div>
-    <br>
     
 
     <div id="imag"></div>
@@ -31,13 +27,12 @@
     <h1>Sign Up!</h1>
     <div id="forms" align="center"> 
    
-        <form name="signUp" action="javascript:signUp1()">
+        <form name="signUp" action="javascript:signUp()">
                     <fieldset>
-					User Name: <input type="username" name="username" id="a" size="20"> <br>
-					Email: <input type="email" name="email"  size="20" id="c" maxlenth="254"> <br>
-					Password: <input type="password" name="userpass" id="b" size="20" maxlength="254">  <br>
-				   
-                    <button type="submit" id="signup" value="submit" align="center"> Submit </button>
+					<p><input type="username" name="username" id="a" maxlength="254" placeholder="Username" required></p>
+					<p><input type="email" name="email" id="c" maxlenth="254" placeholder="Email"></p>
+					<p><input type="password" name="userpass" id="b" maxlength="254" placeholder="Password" required></p>
+                    <p><button type="submit" id="signup" value="submit" align="center"> Submit </button></p>
                    </fieldset>
                 </form>
 
@@ -47,7 +42,7 @@
         <script>
                   Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
                 
-                 function signUp1(){
+                 function signUp(){
                     var user = new Parse.User();
                 
                     user.set("username", document.getElementById('a').value);
