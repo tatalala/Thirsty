@@ -31,19 +31,18 @@
 
 			<div id='login-div'>
 			<div id="mySlideToggler">
-				<a> Login or Sign-up </a>
+				<a> Login </a>
 			</div>
 			<div id="mySlideContent" align="right">
-                  <form name="signUp" action="javascript:signUp1()">
+                  <form name="LogIn" action="javascript:logIn()">
                       <fieldset>
 					User Name: <input type="username" name="username" id="1" size="20">
-					Email: <input type="email" name="email"  size="20" id="3" maxlength="254">
 					Password: <input type="password" name="userpass" id="2" size="20" maxlength="254">
 				   
-                    <button type="submit" id="signup" value="submit"> Sign Up </button>
+                    <button type="submit" id="signup" value="submit"> Log In </button>
                     <button onclick="location.href='signup.html'">SIGN UP</button>
+
                     </fieldset>
-                   
                 </form>
                  
 			</div>
@@ -52,18 +51,14 @@
             <script>
                   Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
                 
-                 function signUp1(){
-                    var user = new Parse.User();
-                
-                    user.set("username", document.getElementById('1').value);
-                    user.set("password", document.getElementById('2').value);
-                    user.set("email", document.getElementById('3').value);
+                 function logIn(){
+                    //var user = new Parse.User();
                
-                     user.signUp(null,
+                     Parse.User.logIn(document.getElementById('1').value, document.getElementById('2').value,
                     {
                         success: function(user) 
                         {
-                            alert("cool");
+                            alert("Logged in!!!!");
                         },
                         error: function(user, error) 
                         {

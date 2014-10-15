@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/signup.css" media="screen" type="text/css" />
     <script src='js/jquery-2.1.1.js'></script>
+    <script src="js/parse.min.js"></script>
   </head>
   <body>
 
@@ -29,32 +30,25 @@
    
     <fieldset id="field">
 
-    <form>
+    <form action="javascript:signUp2()">
       <label>Username</label> <br>
-      <input name="username"size="20" maxlength="20">
-    </form>
+      <input name="username" id="1" size="20" maxlength="20">
 
   	<br>
-    <form>
-			<label>Email</label> <br>
-      <input type="email"name="email"size="20" maxlength="254">
-		</form>
+        <label>Email</label> <br>
+      <input id="3" type="email" name="email" size="20" maxlength="254">
 		<br>
 
-		<form>
 			<label>Password</label> <br>
-      <input type="password" name="pass" size="20">
-		</form>
+      <input type="password" id="2" name="pass" size="20">
 		<br>
 
-
-		<form>
 			<label>Confirm Password</label> <br>
-      <input type="password" name="pass_confirm" size="20">
+      <input type="password" id="4" name="pass_confirm" size="20">
 		</form>
 		<br>
-    <br>
-    <input type="submit" value="submit" align="center">
+        <br>
+        <button type="submit" value="submit" align="center">Submit</button>
 
 
     </fieldset>
@@ -63,7 +57,29 @@
  	</div>
   
 	</div>
-
+      <script>
+        Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+                
+                 function signUp2(){
+                    var user = new Parse.User();
+                    var confirmPass = document.getElementById('4').value);
+                    user.set("username", document.getElementById('1').value);
+                    user.set("password", document.getElementById('2').value);
+                    user.set("email", document.getElementById('3').value);
+                    //if(confirmPass == document.getElementById('2')){
+                         user.signUp(null,
+                        {
+                            success: function(user) 
+                            {
+                                alert("cool");
+                            },
+                            error: function(user, error) 
+                            {
+                                alert("Error: " + error.code + " " + error.message);
+                            }
+                        });
+                };
+            </script>
   <script data-main="scripts/main" src="js/require.js"></script>
   <script type="text/javascript" src="js/skrollr.js"></script>
   <script type="text/javascript">
