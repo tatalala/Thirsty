@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
     <script src='js/jquery-2.1.1.js'></script>
     <script src='js/parse.min.js'></script>
-
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -23,12 +23,6 @@
 
     <input id='menu-checkbox' type='checkbox'>
     <nav id='menu'>
-
-
-
-
-
-
         <div id='login-div'>
         <div id="mySlideToggler">
             <a> Login </a>
@@ -44,31 +38,6 @@
               </form>
         </div>
         </div>
-
-        <script>
-              Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-
-             function logIn(){
-                //var user = new Parse.User();
-
-                 Parse.User.logIn(document.getElementById('1').value, document.getElementById('2').value,
-                {
-                    success: function(user) 
-                    {
-                        alert("Logged in!!!!");
-                    },
-                    error: function(user, error) 
-                    {
-                        alert("Error: " + error.code + " " + error.message);
-                    }
-                });
-            };
-        </script>
-
-
-
-
-
 
         <div id='menu-btn'>
             <a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
