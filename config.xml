@@ -8,7 +8,7 @@
     <name>The Thirst Project</name>
     
     <preference name="permissions"                value="none"/>
-    <preference name="phonegap-version"           value="3.5.0"/>
+    <preference name="phonegap-version"           value="3.6.3"/>
     <preference name="orientation"                value="default"/>
     <preference name="targer-device"              value="universal"/>
     <preference name="android-minSdkVersion"      value="7" />
