@@ -1,5 +1,6 @@
 form fieldset{
   border: 0;
+  width: 300px;
 }
 
 #three-lines{
@@ -69,7 +70,8 @@ form fieldset{
   border-bottom: 1px solid #000000;
 }
 #mySlideContent{
- margin-right: 20px;
+  margin-right: 20px;
+  width: 300px;
 }
 #menu-btn {
   background-color: #transparent;
