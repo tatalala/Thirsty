@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
+    <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/signup.css" media="screen" type="text/css" />
+    <script src='js/jquery-2.1.1.js'></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+
+  	<script>
+      $(function(){
+        $("#navbar").load("navbar.html");
+      });
+    </script>
+      
+    <div id="navbar"></div>
+    
+
+    <div id="imag"></div>
+
+
+    <div id="content">
+    <h1>Sign Up!</h1>
+    <div id="forms" align="center"> 
+   
+        <form name="signUp" action="javascript:signUp()">
+            <fieldset>
+            <p><input type="username" name="username" id="a" maxlength="254" placeholder="Username" required></p>
+            <p><input type="email" name="email" id="c" maxlenth="254" placeholder="Email"></p>
+            <p><input type="password" name="userpass" id="b" maxlength="254" placeholder="Password" required></p>
+            <p><button type="submit" id="signup" value="submit" align="center"> Submit </button></p>
+           </fieldset>
+        </form>
+
+ 	</div>
+	</div>
+      
+
+  <script data-main="scripts/main" src="js/require.js"></script>
+  <script type="text/javascript" src="js/skrollr.js"></script>
+  <script type="text/javascript">
+  skrollr.init({
+    smoothScrolling: false,
+    mobileDeceleration: 0.0004
+  });
+  </script>
+   </body>
+
+ </html>

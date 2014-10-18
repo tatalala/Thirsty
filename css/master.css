@@ -54,3 +54,35 @@ h1{
   text-align: center;
   font-size: 25px;
 }
+form fieldset input[type="username"], input[type="password"], input[type="email"]{
+    margin-left: 10px;
+    background-color: #fff;
+	border: 1px solid #c7d0d2;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #5a5656;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 30px;
+	outline: none;
+	padding: 0px 10px;
+	width: 215px;
+	-webkit-appearance:none;
+}
+form fieldset button[type="submit"], button[type="button"], input[type="button"]{
+    margin-left: 10px;
+    background-color: #33acaf;
+	border: none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #f4f4f4;
+	cursor: pointer;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+	height: 35px;
+	text-transform: uppercase;
+	width: 100px;
+	-webkit-appearance:none;
+}

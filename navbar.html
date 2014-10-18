@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html>
+    <meta charset="UTF-8">
+    <title id="NavBar"> 
+        NavBars
+    </title>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Thirst Project</title>
-		<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
-		<link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
-		<link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
-		<script src='js/jquery-2.1.1.js'></script>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
+    <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
+    <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
+    <script src='js/jquery-2.1.1.js'></script>
+    <script src='js/parse.min.js'></script>
+    <script src="js/script.js"></script>
+</head>
 
-	</head>
-	
-	<body>
-		<div id='header' data-role="navbar">
-		  	<label for='menu-checkbox' id='menu-btn' class="navbar-brand">
-		    	<span id='three-lines'>&#8801;</span> 
-		    	<img id="logo" src="icon.png">
-		  	</label>
-		</div>
+<body>
+    <div id='header'>
+        <label for='menu-checkbox' id='menu-btn' class="navbar-brand">
+            <span id='three-lines'>&#8801;</span>
+            <img id="logo" src="blacklogo.png">
+            <span id="current_url"></span>
 
-		<input id='menu-checkbox' type='checkbox'>
-		<nav id='menu'>
+            <script  type="text/javascript">
+                
+                jQuery(document).ready(function() {
+                var href = jQuery(location).attr('href');
+                var url = jQuery(this).attr('title');
+                jQuery('#current_title').html(href);
+                jQuery('#current_url').html(url);
+            });
 
-			<div id='login-div'>
-			<div id="mySlideToggler">
-				<a> Login or Sign-up </a>
-			</div>
-			<div id="mySlideContent" align="right">
-				<form onclick="">
-					Email: <input type="email"name="email"size="20" maxlength="254">
-				</form>
+            </script>
 
-				<form>
-					Password: <input type="password" name="userpass" size="20">
-				</form>
-				<div align="center">
-				<input type="submit" value="submit" align="center">
-				</div>
-			</div>
-			</div>
-			    
+            <br>
+        </label>
+    </div>
 
-		    <div id='menu-btn'>
-		    	<a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
-            <div id='menu-btn'>
-				<a href="media.html" style = "text-decoration:none;"> Media</a></div>
-            <div id='menu-btn'>
-				<a href="events.html" style = "text-decoration:none;">Events</a></div>
-            <div id='menu-btn'>
-				<a href="about.html" style = "text-decoration:none;">Our Story</a></div>
-		</nav>
-		
-		<label for='menu-checkbox' id='overlay'></label>
 
-    	<script type="text/javascript">
-	    	$(document).ready(function()
-	    	{
-	    		alert($(".item span").text());
-	    	});
-    	
-  			//log in/sign up dropdown 
-			$(function(){
-				$('#mySlideContent').hide();
-				$('#mySlideToggler').click(function(){
-				$('#mySlideContent').slideToggle('slow');
-				$(this).toggleClass('#mySlideContent');
-				return false;
-				});
-			});
+    <input id='menu-checkbox' type='checkbox'>
+    <nav id='menu'>
+        <div id='login-div'>
+            <div id="mySlideToggler">
+                <a> Login </a>
+            </div>
+            <div id="mySlideContent" align="left">
+                <form name="LogIn" action="javascript:logIn()" method="get">
+                    <fieldset>
+                        <input type="username" name="username" placeholder="Username" id="1" size="20" required>
+                        <input type="password" name="userpass" placeholder="Password" id="2" size="20" maxlength="254" required>
+                        <input type="button" value="Sign Up" onclick="location.href='signup.html'">
+                        <button type="submit" id="signup" value="submit"> Log In </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
 
+        <div id='menu-btn'>
+            <a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
+        <div id='menu-btn'>
+            <a href="media.html" style = "text-decoration:none;"> Media</a></div>
+        <div id='menu-btn'>
+            <a href="events.html" style = "text-decoration:none;">Events</a></div>
+        <div id='menu-btn'>
+            <a href="about.html" style = "text-decoration:none;">Our Story</a></div>
+    </nav>
+
+    <label for='menu-checkbox' id='overlay'></label>
+
+    <script type="text/javascript">
+        $(function(){
+            $('#mySlideContent').hide();
+            $('#mySlideToggler').click(function(){
+            $('#mySlideContent').slideToggle('slow');
+            $(this).toggleClass('#mySlideContent');
+            return false;
+            });
+        });
 		</script>
 
-
-	</body>
+    </body>
 </html>

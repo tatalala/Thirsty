@@ -1,0 +1,56 @@
+#imag{
+    background: url("http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg") no-repeat top center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 35%;
+    width: 100%;
+}
+
+#content{
+	vertical-align: middle;
+	width: 75%;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+#field{
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color: white;
+	width: 40%;
+	border-color: #d3d3d3;	
+}
+#forms{
+	margin: auto;
+	width: 100%;
+}
+p{
+	margin: 10px 0px 0px;
+	align-content: center;
+}
+
+#signup {
+	background-color: #33acaf;
+	border: none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #f4f4f4;
+	cursor: pointer;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	height: 35px;
+	text-transform: uppercase;
+	width: 100px;
+	-webkit-appearance:none;
+}
+
+.container {
+        width: 500px;
+        clear: both;
+    }
+    .container input {
+        width: 100%;
+        clear: both;
+    }
