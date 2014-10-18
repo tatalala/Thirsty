@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Pure CSS Android Navigation Drawer - CodePen</title>
+  <title>Thirst Project-Index</title>
 
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
 
@@ -18,31 +18,30 @@
 
 
 <body>
-   <script>
-      $(function(){
-        $("#navbar").load("navbar.html");
-      });
-    </script>
-	<div id="navbar"></div>
-	<script type="text/javascript">
-        Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-        var TestObject = Parse.Object.extend("TestObject");
-var testObject = new TestObject();
-testObject.save({foo: "bar"}).then(function(object) {
-  alert("yay! it worked");
-});
-    </script>
+  <script type="text/javascript">
+    $(function(){
+      $("#navbar").load("navbar.html");
+    });
+    
+    Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
 
+    testObject.save({foo: "bar"}).then(function(object) {
+    //alert("yay! it worked");
+    });
+    </script>
+  <div id="navbar"></div>
 	
-<div id='content'>
-  <ul id='items'>
-    <li>#1</li>
-    <li>#2</li>
-    <li>#3</li>
-    <li>#4</li>
-    <li>#5</li>
-  </ul>
-</div>
+  <div id='content'>
+    <ul id='items'>
+      <li>#1</li>
+      <li>#2</li>
+      <li>#3</li>
+      <li>#4</li>
+      <li>#5</li>
+    </ul>
+  </div>
 </body>
 </html>
 

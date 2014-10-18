@@ -1,58 +1,101 @@
-    
-<!DOCTYPE html>
+<DOCTYPE <!DOCTYPE html>
 <html>
 
     <head>
-        <meta charset="UTF-8">
-        <title>Thirst Project</title>
-        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
-        <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
-        <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
-        <script src='js/jquery-2.1.1.js'></script>
-
-        <script type="text/javascript">
-            $(function(){
-                $("#navbar").load("navbar.html");
-            }); 
-            
-        </script>
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="css/profile.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
+        <script type="text/javascript" src='js/bootstrap.js'></script>
+        <script type="text/javascript" src='js/jquery-2.1.1.js'></script>
 
     </head>
-    
+
     <body>
-
         <div id="navbar"></div>
+        <br/><br/><br/>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+          <li class><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+          <li><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
+          <li><a href="#settings" role="tab" data-toggle="tab">Settings</a></li>
+        </ul>
 
-        <div class="container">
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="home">home</div>
+          <div class="tab-pane" id="profile">profile</div>
+          <div class="tab-pane" id="messages">message</div>
+          <div class="tab-pane" id="settings">settings</div>
+        </div>
+
+        <script type="text/javascript">
+            $('#profile').click(function (e) {
+                e.preventDefault()
+            $(this).tab('show')
+            })
+        </script>
+        <!-- <div class="container">
             <div class="row">
-                <div class="col-sm-2 col-md-2">
-                    <img class="img-circle" width="140" height="140" border="0" src="/Images/Totoro.png"
-                    alt="" class="img-rounded img-responsive" />
-                </div>
-                <div class="col-sm-4 col-md-4">
-                    <blockquote>
-                        <p>Mark Awa</p> <small><cite title="Source Title"> Long Beach, CA <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-                    </blockquote>
-                    <p> <i class="glyphicon glyphicon-envelope"></i> markawa5[a]hotmail.com
-                        <br /> <i class="glyphicon glyphicon-wrench"></i> Java
-                        <br /> <i class="glyphicon glyphicon-user"></i> Developer</p>
-                </div>
-                <div class="col-sm-2 col-md-2">
-                    <img class="img-circle" width="140" height="140" border="0" src="/Images/Totoro.png"
-                    alt="" class="img-rounded img-responsive" />
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <blockquote>
-                        <p>Scott De Jesus</p> <small><cite title="Source Title">Long Beach, CA <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-                    </blockquote>
-                    <p> <i class="glyphicon glyphicon-envelope"></i> sdjesus89[a]gmail.com
-                        <br /> <i class="glyphicon glyphicon-wrench"></i> Java
-                        <br /> <i class="glyphicon glyphicon-user"></i> Developer</p>
+                <div class="col-sm-4 col-md-4 user-details">
+                    <div class="user-image">
+                        <img src="" title="User Img" class="img-circle">
+                    </div>
+                    <div class="user-info-block">
+                        <div class="user-heading">
+                            <h3>First Lastname</h3>
+                            <span class="help-block">Long Beach</span>
+                        </div>
+                        <ul class="navigation">
+                            <li class="active">
+                                <a data-toggle="tab" href="#information">
+                                    <span class="fa fa-user"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#settings">
+                                    <span class="fa fa-cog"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#email">
+                                    <span class="fa fa-envelope"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#events">
+                                    <span class="fa fa-calendar"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="user-body">
+                            <div class="tab-content">
+                                <div id="information" class="tab-pane active">
+                                    <h4>Account Information</h4>
+                                </div>
+                                <div id="settings" class="tab-pane">
+                                    <h4>Settings</h4>
+                                </div>
+                                <div id="email" class="tab-pane">
+                                    <h4>Send Message</h4>
+                                </div>
+                                <div id="events" class="tab-pane">
+                                    <h4>Events</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div> -->
 
-            <br />
+        <script>
+            $(function(){
+                $("#navbar").load("navbar.html");
+                $("#socialBtns").load("socialBtns.html");
+            });
+        </script>
 
-        </div> <!-- end container -->
     </body>
 </html>
