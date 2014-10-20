@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title id="NavBar"> 
-        NavBars
+        Navigation Drawer
     </title>
-
+    <link rel='stylesheet' href='css/font-awesome.min.css'/>
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
     <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
     <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
@@ -42,7 +42,13 @@
     <nav id='menu'>
         <div id='login-div'>
         <div id="mySlideToggler">
-            <a> Login </a>
+            <a style = "text-decoration:none;">
+                <i class="fa fa-sign-in fa-fw">
+                </i>&nbsp; Sign In
+            </a> 
+
+        </div>
+
         </div>
         <div id="mySlideContent" align="left">
               <form name="LogIn" action="javascript:logIn()" method="get">
@@ -51,19 +57,20 @@
                     <input type="password" name="userpass" placeholder="Password" id="2" size="20" maxlength="254" required>
                     <input type="button" value="Sign Up" onclick="location.href='signup.html'">
                     <button type="submit" id="signup" value="submit"> Log In </button>
+
                 </fieldset>
               </form>
         </div>
         </div>
 
         <div id='menu-btn'>
-            <a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
+           <a href="inspire.html" style = "text-decoration:none;"><i class="fa fa-child fa-fw"></i>&nbsp; Inspire & Inform</a></div>
         <div id='menu-btn'>
-            <a href="media.html" style = "text-decoration:none;"> Media</a></div>
+             <a href="media.html" style = "text-decoration:none;"><i class="fa fa-youtube-play fa-fw"></i>&nbsp; Media</a></div>
         <div id='menu-btn'>
-            <a href="events.html" style = "text-decoration:none;">Events</a></div>
+           <a href="events.html" style = "text-decoration:none;"><i class="fa fa-calendar-o fa-fw"></i>&nbsp; Events</a></div>
         <div id='menu-btn'>
-            <a href="about.html" style = "text-decoration:none;">Our Story</a></div>
+            <a href="about.html" style = "text-decoration:none;"><i class="fa fa-group fa-fw"></i>&nbsp; Our Story</a></div>
     </nav>
 
 
