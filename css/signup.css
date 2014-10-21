@@ -1,11 +1,8 @@
 #imag{
     background: url("http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg") no-repeat top center fixed;
     background-size: contain;
-     background-position: 0px 10px;
-    margin: 0;
-    padding: 0;
+    background-position: 100% 40px;
     height: 35%;
-    width: 100%;
 }
 
 #content{
