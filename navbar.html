@@ -1,81 +1,78 @@
-<!DOCTYPE html>
+
+<!DOCTYPE html> 
+<meta charset="UTF-8">
 <html>
-    <meta charset="UTF-8">
     <title id="NavBar"> 
         NavBars
     </title>
+    <head>
+        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
+        <link rel="stylesheet" href="css/master.css" media="screen" type="text/css"/> 
+        <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css"/>
+        <script src='js/jquery-2.1.1.js'></script>
+        <script src='js/parse.min.js'></script>
+        <script src="js/script.js"></script>
+    </head>
 
-    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
-    <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
-    <link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
-    <script src='js/jquery-2.1.1.js'></script>
-    <script src='js/parse.min.js'></script>
-    <script src="js/script.js"></script>
-</head>
+    <body>
+        <div id='header'>
+            <label for='menu-checkbox' id='menu-btn' class="navbar-brand">
+                <span id='three-lines'>&#8801;</span>
+                <img id="logo" src="assets/blacklogo.png">
+                <span id="current_url"></span>
+                <!-- Query tittle for navbar display -->
+                <script  type="text/javascript">
+                    jQuery(document).ready(function() {
+                    var href = jQuery(location).attr('href');
+                    var url = jQuery(this).attr('title');
+                    jQuery('#current_title').html(href);
+                    jQuery('#current_url').html(url);
+                    });
+                </script>
 
-<body>
-    <div id='header'>
-        <label for='menu-checkbox' id='menu-btn' class="navbar-brand">
-            <span id='three-lines'>&#8801;</span>
-            <img id="logo" src="blacklogo.png">
-            <span id="current_url"></span>
-
-            <script  type="text/javascript">
-                
-                jQuery(document).ready(function() {
-                var href = jQuery(location).attr('href');
-                var url = jQuery(this).attr('title');
-                jQuery('#current_title').html(href);
-                jQuery('#current_url').html(url);
-            });
-
-            </script>
-
-            <br>
-        </label>
-    </div>
-
-
-    <input id='menu-checkbox' type='checkbox'>
-    <nav id='menu'>
-        <div id='login-div'>
-            <div id="mySlideToggler">
-                <a> Login </a>
-            </div>
-            <div id="mySlideContent" align="left">
-                <form name="LogIn" action="javascript:logIn()" method="get">
-                    <fieldset>
-                        <input type="username" name="username" placeholder="Username" id="1" size="20" required>
-                        <input type="password" name="userpass" placeholder="Password" id="2" size="20" maxlength="254" required>
-                        <input type="button" value="Sign Up" onclick="location.href='signup.html'">
-                        <button type="submit" id="signup" value="submit"> Log In </button>
-                    </fieldset>
-                </form>
-            </div>
+                <br/>
+            </label>
         </div>
 
-        <div id='menu-btn'>
-            <a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
-        <div id='menu-btn'>
-            <a href="media.html" style = "text-decoration:none;"> Media</a></div>
-        <div id='menu-btn'>
-            <a href="events.html" style = "text-decoration:none;">Events</a></div>
-        <div id='menu-btn'>
-            <a href="about.html" style = "text-decoration:none;">Our Story</a></div>
-    </nav>
+        <input id='menu-checkbox' type='checkbox'>
+        <nav id='menu'>
+            <div id='login-div'>
+                <div id="mySlideToggler">
+                    <a> Login </a>
+                </div>
+                <div id="mySlideContent" align="left">
+                    <form name="LogIn" action="javascript:logIn()" method="get">
+                        <fieldset>
+                            <input type="username" name="username" placeholder="Username" id="1" size="20" required>
+                            <input type="password" name="userpass" placeholder="Password" id="2" size="20" maxlength="254" required>
+                            <input type="button" value="Sign Up" onclick="location.href='signup.html'">
+                            <button type="submit" id="signup" value="submit"> Log In </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
 
-    <label for='menu-checkbox' id='overlay'></label>
+            <div id='menu-btn'>
+                <a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
+            <div id='menu-btn'>
+                <a href="media.html" style = "text-decoration:none;"> Media</a></div>
+            <div id='menu-btn'>
+                <a href="events.html" style = "text-decoration:none;">Events</a></div>
+            <div id='menu-btn'>
+                <a href="about.html" style = "text-decoration:none;">Our Story</a></div>
+        </nav>
 
-    <script type="text/javascript">
-        $(function(){
-            $('#mySlideContent').hide();
-            $('#mySlideToggler').click(function(){
-            $('#mySlideContent').slideToggle('slow');
-            $(this).toggleClass('#mySlideContent');
-            return false;
+        <label for='menu-checkbox' id='overlay'></label>
+
+        <script type="text/javascript">
+            $(function(){
+                $('#mySlideContent').hide();
+                $('#mySlideToggler').click(function(){
+                $('#mySlideContent').slideToggle('slow');
+                $(this).toggleClass('#mySlideContent');
+                return false;
+                });
             });
-        });
 		</script>
-
     </body>
 </html>

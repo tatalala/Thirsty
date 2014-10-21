@@ -1,101 +1,82 @@
-<DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
-
     <head>
         <title>Profile</title>
         <link rel="stylesheet" type="text/css" href="css/profile.css">
+        <link rel="stylesheet" type="text/css" href="css/master.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
-        <script type="text/javascript" src='js/bootstrap.js'></script>
-        <script type="text/javascript" src='js/jquery-2.1.1.js'></script>
-
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
     </head>
 
     <body>
         <div id="navbar"></div>
         <br/><br/><br/>
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-          <li class><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
-          <li><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
-          <li><a href="#settings" role="tab" data-toggle="tab">Settings</a></li>
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane active" id="home">home</div>
-          <div class="tab-pane" id="profile">profile</div>
-          <div class="tab-pane" id="messages">message</div>
-          <div class="tab-pane" id="settings">settings</div>
-        </div>
-
-        <script type="text/javascript">
-            $('#profile').click(function (e) {
-                e.preventDefault()
-            $(this).tab('show')
-            })
-        </script>
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-4 user-details">
+        <div class="containter">
+            <div class="center" id="content" style="text-align:center;">
+                <div class="navtab1">
                     <div class="user-image">
-                        <img src="" title="User Img" class="img-circle">
+                    <img src="icon.png" alt="Totoro" title="Totoro" class="img-circle">
                     </div>
-                    <div class="user-info-block">
-                        <div class="user-heading">
-                            <h3>First Lastname</h3>
-                            <span class="help-block">Long Beach</span>
-                        </div>
-                        <ul class="navigation">
-                            <li class="active">
-                                <a data-toggle="tab" href="#information">
-                                    <span class="fa fa-user"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#settings">
-                                    <span class="fa fa-cog"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#email">
-                                    <span class="fa fa-envelope"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#events">
-                                    <span class="fa fa-calendar"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="user-body">
-                            <div class="tab-content">
-                                <div id="information" class="tab-pane active">
-                                    <h4>Account Information</h4>
-                                </div>
-                                <div id="settings" class="tab-pane">
-                                    <h4>Settings</h4>
-                                </div>
-                                <div id="email" class="tab-pane">
-                                    <h4>Send Message</h4>
-                                </div>
-                                <div id="events" class="tab-pane">
-                                    <h4>Events</h4>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="user-heading">
+                        <h3>Totoro Lastname</h3>
+                        <span class="help-block">Long Beach, CA</span>
+                    </div>
+                    <ul id="tabs" class="nav navtab1 nav-tabs" data-tabs="tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#information">
+                                <span class="fa fa-user"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#events">
+                                <span class="fa fa-calendar"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#edit">
+                                <span class="fa fa-pencil"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#settings">
+                                <span class="fa fa-cog"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center">
+                <div id="my-tab-content" class="tab-content">
+                    <div class="tab-pane active" id="information">
+                        <h1>Genral Info</h1>
+                        <p>general info here</p>
+                    </div>
+                    <div class="tab-pane" id="events">
+                        <h1>Events</h1>
+                    </div>
+                    <div class="tab-pane" id="edit">
+                        <h1>Edit Profile</h1>
+                        <div id="editProfile"></div>
+                    </div>
+                    <div class="tab-pane" id="settings">
+                        <h1>Settings</h1>
+                        <input type="checkbox" name="option" value="notif"> Notification(on/off)
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <script>
             $(function(){
                 $("#navbar").load("navbar.html");
                 $("#socialBtns").load("socialBtns.html");
+                $("#editProfile").load("edit_profile.html");
             });
         </script>
+
+        <script type="text/javascript" src='js/bootstrap.js'></script>
 
     </body>
 </html>

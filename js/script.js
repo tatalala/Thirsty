@@ -8,11 +8,11 @@ function logIn(){
     {
         success: function(user) 
         {
-           location.href='inspire.html';
+           location.href='user_profile.html';
         },
         error: function(user, error) 
         {
-            alert("Incorrect passowrd. Please try again.");
+            alert("Incorrect password. Please try again.");
         }
     });
 };
@@ -46,4 +46,44 @@ function loggedIn(){
     else{
 
     }
+}
+
+/*update user info*/
+function updateProf(){
+
+    alert("Hello, I'm here!");
+    // update the info
+    var currentUser = Parse.User.current();
+    currentUser.set("username", document.getElementById('username').value);
+    currentUser.set("password", document.getElementById('pw').value);
+    currentUser.set("email", document.getElementById('email').value);
+
+    user.updateProf(null,
+    {
+        success: function(user) 
+        {
+            location.href = 'inspire.html';
+        },
+        error: function(user, error) 
+        {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+
+    // Query that same info to populate back on the page
+    ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
+    query.whereEqualTo("username", "email");
+    query.findInBackGround(new GetCallback<ParseObject>(){
+        public void done(ParseObject object, ParseException e)
+        {
+            if(object == null)
+            {
+                Log.d("score", "the findInBackGround failed");
+            }
+            else
+            {
+                Log.d("score", "Retrieved the object");
+            }
+        }
+    });
 }
