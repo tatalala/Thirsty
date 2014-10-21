@@ -3,16 +3,10 @@
 
 
 #imag{
-    
-    position: fixed;
-    
-    top: 0%;
-
-    left: 0%;
-
-    min-width: 100%;
-
-    z-index: -10000;
+    background: url("http://charityspring.files.wordpress.com/2013/03/thirst-project.jpg") no-repeat top center fixed;
+    background-size: contain;
+    background-position: 100% 40px;
+    height: 35%;
 }
 
 .icon-button {
