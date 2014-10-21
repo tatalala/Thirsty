@@ -7,11 +7,11 @@ form fieldset{
   color: #424242;
   vertical-align: middle;
   margin: -10px;
-  font-weight: bold;
+  margin-right: 100px;
 }
 #three-lines{
   vertical-align: middle;
-    color: #424242;
+  color: #424242;
   left: -10px;
 }
 #logo {
