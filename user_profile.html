@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="css/profile.css">
+        <link rel="stylesheet" type="text/css" href="css/master.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    </head>
+
+    <body>
+        <div id="navbar"></div>
+        <br/><br/><br/>
+        <div class="containter">
+            <div class="center" id="content" style="text-align:center;">
+                <div class="navtab1">
+                    <div class="user-image">
+                    <img src="icon.png" alt="Totoro" title="Totoro" class="img-circle">
+                    </div>
+                    <div class="user-heading">
+                        <h3>Totoro Lastname</h3>
+                        <span class="help-block">Long Beach, CA</span>
+                    </div>
+                    <ul id="tabs" class="nav navtab1 nav-tabs" data-tabs="tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#information">
+                                <span class="fa fa-user"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#events">
+                                <span class="fa fa-calendar"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#edit">
+                                <span class="fa fa-pencil"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#settings">
+                                <span class="fa fa-cog"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center">
+                <div id="my-tab-content" class="tab-content">
+                    <div class="tab-pane active" id="information">
+                        <h1>Genral Info</h1>
+                        <p>general info here</p>
+                    </div>
+                    <div class="tab-pane" id="events">
+                        <h1>Events</h1>
+                    </div>
+                    <div class="tab-pane" id="edit">
+                        <h1>Edit Profile</h1>
+                        <div id="editProfile"></div>
+                    </div>
+                    <div class="tab-pane" id="settings">
+                        <h1>Settings</h1>
+                        <input type="checkbox" name="option" value="notif"> Notification(on/off)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(function(){
+                $("#navbar").load("navbar.html");
+                $("#socialBtns").load("socialBtns.html");
+                $("#editProfile").load("edit_profile.html");
+            });
+        </script>
+
+        <script type="text/javascript" src='js/bootstrap.js'></script>
+
+    </body>
+</html>
