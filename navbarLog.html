@@ -7,9 +7,9 @@
 		<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'/>
 		<link rel="stylesheet" href="css/master.css" media="screen" type="text/css" /> 
 		<link rel="stylesheet" href="css/navbar.css" media="screen" type="text/css" />
-		<script src='js/jquery-2.1.1.js'></script>
+	 <script src='js/jquery-2.1.1.js'></script>
         <script src='js/parse.min.js'></script>
-
+        <script src="js/script.js"></script>
 	</head>
 	
 	<body>
@@ -26,42 +26,10 @@
 
 			<div id='login-div'>
 			<div id="mySlideToggler">
-				<a> Login </a>
+				<a> User is Logged in! </a>
 			</div>
-			<div id="mySlideContent" align="right">
-                  <form name="LogIn" action="javascript:logIn()">
-                      <fieldset>
-					User Name: <input type="username" name="username" id="1" size="20">
-					Password: <input type="password" name="userpass" id="2" size="20" maxlength="254">
-				   
-                    <button type="submit" id="signup" value="submit"> Log In </button>
-                    <button onclick="location.href='signup.html'">SIGN UP</button>
-
-                    </fieldset>
-                </form>
-                 
+			
 			</div>
-			</div>
-			    
-            <script>
-                  Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-                
-                 function logIn(){
-                    //var user = new Parse.User();
-               
-                     Parse.User.logIn(document.getElementById('1').value, document.getElementById('2').value,
-                    {
-                        success: function(user) 
-                        {
-                            alert("Logged in!!!!");
-                        },
-                        error: function(user, error) 
-                        {
-                            alert("Error: " + error.code + " " + error.message);
-                        }
-                    });
-                };
-            </script>
 
 		    <div id='menu-btn'>
 		    	<a href="inspire.html" style = "text-decoration:none;">Inspire & Inform</a></div>
