@@ -89,15 +89,24 @@ function getInfo(){
 function updateProf(){
 
     var currentUser = Parse.User.current();
-    var User = Parse.Object.extend("User");
+    // var User = Parse.Object.extend("User");
 
-    var query= new Parse.Query(User);
-
+    var query= new Parse.Query(currentUser);
     var objectID = currentUser.id;
     
-    var email = $("#email").val();
+    // var email = $("#email").val();
+    var email = document.getElementById("email").value;
 
-    currentUser.set("email", email);
+    query.get.("S7pP59mEYF", {
+        success: function(){
+            currentUser.set("email", email);
+            currentUser.save();
+        },
+        error: function(user, error){
+            console.log(error.message);
+        }
+    })
+    
 
     // acl.setRoleWriteAccess(currentUser, true);
     // user.set("email", email);
