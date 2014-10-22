@@ -23,9 +23,9 @@
                     <div class="user-image">
                     <img src="icon.png" alt="Totoro" title="Totoro" class="img-circle">
                     </div>
-                    <div class="user-heading">
-                        <h3>Totoro Lastname</h3>
-                        <span class="help-block">Long Beach, CA</span>
+                    <div class="user-heading" id="fullname">
+                        <!-- <h3>Totoro Lastname</h3>
+                        <span class="help-block">Long Beach, CA</span> -->
                     </div>
                     <ul id="tabs" class="nav navtab1 nav-tabs" data-tabs="tabs">
                         <li class="active">
@@ -81,6 +81,12 @@
         </script>
 
         <script type="text/javascript" src='js/bootstrap.js'></script>
+        <script type="text/javascript" src="js/handlebars.js"></script>
+
+        <script type="text/x-handlebars-template" id="name-loc">
+            <h3>{{username}}</h3>
+            <span class="help-block">{{email}}</span>
+        </script>
 
     </body>
 </html>

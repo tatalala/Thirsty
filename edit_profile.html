@@ -21,11 +21,11 @@
           </div>
           <h3>Personal info</h3>
           
-          <form class="form-horizontal" role="form" action="javascript:updateProf()">
+          <form class="form-horizontal" id="updateInfo" action="javascript:updateProf()" >
             <div class="form-group">
               <label class="col-lg-3 control-label">First name:</label>
               <div class="col-lg-8">
-                <input class="form-control" type="text" name="firstName"id="fname" value="Jane">
+                <input class="form-control" type="text" name="firstName" id="fname" value="Jane">
               </div>
             </div>
             <div class="form-group">
@@ -64,12 +64,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-3 control-label">Username:</label>
-              <div class="col-md-8">
-                <input class="form-control" type="text" name="username" id="username" value="janeuser">
-              </div>
-            </div>
-            <div class="form-group">
               <label class="col-md-3 control-label">Password:</label>
               <div class="col-md-8">
                 <input class="form-control" name="password" id="pw" type="password" value="11111122333">
@@ -95,5 +89,8 @@
   </div>
 </div>
 
+
 <script src="js/parse.min.js"></script>
+<script type="text/javascript">
+  Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");</script>
 <script src="js/script.js"></script>

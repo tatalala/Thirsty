@@ -1,6 +1,19 @@
 /* Login script */
 Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
 
+function closeModal(){
+    $("#add-quote").trigger("#reveal:close");
+}
+
+$(document).ready(function(){
+    $("#updateInfo").submit(function(e){
+        e.preventDefault();
+        updateProf();
+    });
+
+    getInfo();
+})
+
 function logIn(){
      var username = document.getElementById('1').value;
      var password = document.getElementById('2').value;
@@ -48,42 +61,55 @@ function loggedIn(){
     }
 }
 
+function getInfo(){
+    var User = Parse.Object.extend("TestPost");
+    var query= new Parse.Query(User);
+
+    query.descending("createAt");
+    query.limit(1);
+
+    query.find({
+        success: function(results){
+            $("#fullname").html("");
+            var template = Handlebars.compile($("#name-loc").html);
+
+            $(results).each(function(i,e)){
+                var q = e.toJSON();
+                $("#fullname").append(template(q))
+            }
+        },
+
+        error:function(error){
+            console.log(error.message);
+        }
+    })   
+}
+
 /*update user info*/
 function updateProf(){
 
-    alert("Hello, I'm here!");
-    // update the info
     var currentUser = Parse.User.current();
-    currentUser.set("username", document.getElementById('username').value);
-    currentUser.set("password", document.getElementById('pw').value);
-    currentUser.set("email", document.getElementById('email').value);
+    var User = Parse.Object.extend("User");
 
-    user.updateProf(null,
-    {
-        success: function(user) 
-        {
-            location.href = 'inspire.html';
-        },
-        error: function(user, error) 
-        {
-            alert("Error: " + error.code + " " + error.message);
-        }
-    });
+    var query= new Parse.Query(User);
 
-    // Query that same info to populate back on the page
-    ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
-    query.whereEqualTo("username", "email");
-    query.findInBackGround(new GetCallback<ParseObject>(){
-        public void done(ParseObject object, ParseException e)
-        {
-            if(object == null)
-            {
-                Log.d("score", "the findInBackGround failed");
-            }
-            else
-            {
-                Log.d("score", "Retrieved the object");
-            }
-        }
-    });
+    var objectID = currentUser.id;
+    
+    var email = $("#email").val();
+
+    currentUser.set("email", email);
+
+    // acl.setRoleWriteAccess(currentUser, true);
+    // user.set("email", email);
+    // user.setACL(new Parse.ACL(currentUser));
+
+    // user.save(null,{
+    //     success: function(){
+    //         console.log("success!");
+    //         closeModal();
+    //     },
+    //     error: function(user, error){
+    //         console.log(error.message);
+    //     }
+    // });
 }
