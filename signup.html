@@ -41,6 +41,25 @@
  	</div>
 	</div>
       
+      <script>
+      function signUp(){
+        var user = new Parse.User();
+        user.set("username", document.getElementById('a').value);
+        user.set("password", document.getElementById('b').value);
+        user.set("email", document.getElementById('c').value);
+
+    user.signUp(null,{success: function(user) 
+        {
+            location.href = 'inspire.html';
+        },
+        error: function(user, error) 
+        {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+};
+      </script>
+      
 
   <script data-main="scripts/main" src="js/require.js"></script>
   <script type="text/javascript" src="js/skrollr.js"></script>
