@@ -61,9 +61,9 @@ Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4F
 
   function updateProf(){
 
-    var User = Parse.Object.extend("User");
+    //var User = Parse.Object.extend("User");
     var currentUser = Parse.User.current();
-    var query= new Parse.Query(User);
+    var query= new Parse.Query(currentUser);
     var currentUserID = currentUser.id;
 
     var email = $("#email").val();
