@@ -65,7 +65,7 @@ $(document).ready(function(){
     var currentUser = Parse.User.current();
     var query= new Parse.Query(User);
     var currentUserID = currentUser.id;
-    
+
     var email = $("#email").val();
     var fname = $("#fname").val();
     var lname = $("#lname").val();
@@ -78,12 +78,12 @@ $(document).ready(function(){
         success: function(update){
 
             update.set("email", email);
-            // update.set("fname", fname);
-            // update.set("lname", lname);
-            // update.set("school", school);
-            // update.set("password", pw);
-            // update.set("grade", grade);
-            // update.set("location", location);
+            update.set("fname", fname);
+            update.set("lname", lname);
+            update.set("school", school);
+            update.set("password", pw);
+            update.set("grade", grade);
+            update.set("location", location);
             update.save();
             alert("inside updateProf");
         },
@@ -102,16 +102,14 @@ function retrieveUserInfo(){
 
     query.find(currentUserID, {
         success: function(retrieve){
-            // var email = document.getElementById("email").value;
-            // alert(email);
-            // var rEmail = retrieve.get("email");
-            // var emailField = document.getElementById("email");
-            // emailField.innerHTML = rEmail;
-            var username = document.getElementById("username").value;
-            var rUsername = retrieve.get("username");
-            var usernameField = document.getElementById("username");
+            var fname = document.getElementById("fname").value;
+            alert(fname);
+            var rFname = retrieve.get("fname");
+            var fnameField = document.getElementById("fname");
+            fnameField.innerHTML = rFname;
+            
             alert("inside retrieveProf after this will be retrieve");
-            alert(retrieve);
+            alert(emailField.innerHTML);
         },
         error: function(query, error){
             console.log(error.message);
