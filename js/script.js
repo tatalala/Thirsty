@@ -1,19 +1,6 @@
 /* Login script */
 Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
 
-function closeModal(){
-    $("#add-quote").trigger("#reveal:close");
-}
-
-$(document).ready(function(){
-    $("#updateInfo").submit(function(e){
-        e.preventDefault();
-        updateProf();
-    });
-
-    getInfo();
-})
-
 function logIn(){
      var username = document.getElementById('1').value;
      var password = document.getElementById('2').value;
@@ -50,6 +37,7 @@ function signUp(){
         }
     });
 };
+
 /* End of signup script */
 function loggedIn(){
     var currentUser = Parse.User.current();
@@ -61,64 +49,72 @@ function loggedIn(){
     }
 }
 
-function getInfo(){
-    var User = Parse.Object.extend("TestPost");
-    var query= new Parse.Query(User);
+$(document).ready(function(){
+    // $("#updateInfo").submit(function(e){
+    //       e.preventDefault();
+    //       updateProf();
+    // });
+    // retrieveUserInfo(); 
+    updateProf();  
+    retrieveUserInfo();
+  })
 
-    query.descending("createAt");
-    query.limit(1);
+  function updateProf(){
 
-    query.find({
-        success: function(results){
-            $("#fullname").html("");
-            var template = Handlebars.compile($("#name-loc").html);
-
-            $(results).each(function(i,e)){
-                var q = e.toJSON();
-                $("#fullname").append(template(q))
-            }
-        },
-
-        error:function(error){
-            console.log(error.message);
-        }
-    })   
-}
-
-/*update user info*/
-function updateProf(){
-
+    var User = Parse.Object.extend("User");
     var currentUser = Parse.User.current();
-    // var User = Parse.Object.extend("User");
-
-    var query= new Parse.Query(currentUser);
-    var objectID = currentUser.id;
+    var query= new Parse.Query(User);
+    var currentUserID = currentUser.id;
     
-    // var email = $("#email").val();
-    var email = document.getElementById("email").value;
+    var email = $("#email").val();
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var school = $("#school").val();
+    var pw = $("#pw").val();
+    var grade = $("#grade").val();
+    var location = $("#location").val();
 
-    query.get.("S7pP59mEYF", {
-        success: function(){
-            currentUser.set("email", email);
-            currentUser.save();
+    query.get(currentUserID, {
+        success: function(update){
+
+            update.set("email", email);
+            // update.set("fname", fname);
+            // update.set("lname", lname);
+            // update.set("school", school);
+            // update.set("password", pw);
+            // update.set("grade", grade);
+            // update.set("location", location);
+            update.save();
+            alert("inside updateProf");
         },
         error: function(user, error){
             console.log(error.message);
         }
-    })
-    
+    });
+}
 
-    // acl.setRoleWriteAccess(currentUser, true);
-    // user.set("email", email);
-    // user.setACL(new Parse.ACL(currentUser));
+function retrieveUserInfo(){
+    var User = Parse.Object.extend("User");
+    alert("I'm inside getUserInfo");
+    var currentUser = Parse.User.current();
+    var query= new Parse.Query(User);
+    var currentUserID = currentUser.id;
 
-    // user.save(null,{
-    //     success: function(){
-    //         console.log("success!");
-    //         closeModal();
-    //     },
-    //     error: function(user, error){
-    //         console.log(error.message);
-    //     }
-    // });
+    query.find(currentUserID, {
+        success: function(retrieve){
+            // var email = document.getElementById("email").value;
+            // alert(email);
+            // var rEmail = retrieve.get("email");
+            // var emailField = document.getElementById("email");
+            // emailField.innerHTML = rEmail;
+            var username = document.getElementById("username").value;
+            var rUsername = retrieve.get("username");
+            var usernameField = document.getElementById("username");
+            alert("inside retrieveProf after this will be retrieve");
+            alert(retrieve);
+        },
+        error: function(query, error){
+            console.log(error.message);
+        }
+    });
 }

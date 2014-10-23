@@ -12,7 +12,6 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
         <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
-         <script src="js/script.js"></script>
     </head>
 
     <body>
@@ -56,10 +55,16 @@
                 <div id="my-tab-content" class="tab-content">
                     <div class="tab-pane active" id="information">
                         <h1>General Info</h1>
-                        <p>general info here</p>
+                        <div id="name">Name: </div>
+                        <div id="name">Location: </div>
+                        <div id="email">Email:</div>
+                        <div id="school">School:</div>
+                        <div id="grade">Grade:</div>
+
                     </div>
                     <div class="tab-pane" id="events">
                         <h1>Events</h1>
+                        <p>To be update</p>
                     </div>
                     <div class="tab-pane" id="edit">
                         <h1>Edit Profile</h1>
@@ -83,12 +88,13 @@
 
         <script type="text/javascript" src='js/bootstrap.js'></script>
         <script type="text/javascript" src="js/handlebars.js"></script>
+        <script src="js/script.js"></script>
 
         <script type="text/x-handlebars-template" id="name-loc">
-            <h3>{{username}}</h3>
-            <span class="help-block">{{email}}</span>
+            <p>{{username}}</p>
+            <p>{{email}}</p>
+            alert({{username}});
         </script>
-
 
     </body>
 </html>

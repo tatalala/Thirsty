@@ -1,8 +1,3 @@
-<script src="js/parse.min.js"></script>
-<script type="text/javascript">
-  Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-</script>
-<script src="js/script.js"></script>
 
 <div class="container">
   <div class="text-center">
@@ -20,7 +15,7 @@
         
         <!-- edit form column -->
         <div class="col-md-9 personal-info">
-          <div class="alert alert-info alert-dismissable">
+          <div id="alert" class="alert alert-info alert-dismissable">
             <a class="panel-close close" data-dismiss="alert">×</a> 
             <i class="fa fa-coffee"></i>
             This is an <strong>.alert</strong>. Use this to show important messages to the user.
@@ -31,54 +26,49 @@
             <div class="form-group">
               <label class="col-lg-3 control-label">First name:</label>
               <div class="col-lg-8">
-                <input class="form-control" type="text" name="firstName" id="fname" value="Jane">
+                <input class="form-control" type="text" name="firstName" id="fname" placeholder="Jane">
               </div>
             </div>
             <div class="form-group">
               <label class="col-lg-3 control-label">Last name:</label>
               <div class="col-lg-8">
-                <input class="form-control" type="text" name="lastName" id="lname" value="Bishop">
+                <input class="form-control" type="text" id="lname" placeholder="Doe" >
               </div>
             </div>
             <div class="form-group">
               <label class="col-lg-3 control-label">School:</label>
               <div class="col-lg-8">
-                <input class="form-control" type="text" name="school" id="school" value="">
+                <input class="form-control" type="text" id="school" placeholder="CSULB">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Grade:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" id="grade" placeholder="sophomore/junior/senior/etc.">
               </div>
             </div>
             <div class="form-group">
               <label class="col-lg-3 control-label">Email:</label>
               <div class="col-lg-8">
-                <input class="form-control" type="text" name="email" id="email" value="yourname@Thirst.com">
+                <input class="form-control" type="text" id="email" placeholder="yourEmail@Thirst.org">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-lg-3 control-label">Time Zone:</label>
+              <label class="col-lg-3 control-label">Location:</label>
               <div class="col-lg-8">
-                <div class="ui-select">
-                  <select id="user_time_zone" class="form-control">
-                    <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                    <option value="Alaska">(GMT-09:00) Alaska</option>
-                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                    <option value="Arizona">(GMT-07:00) Arizona</option>
-                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                    <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                    <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                  </select>
-                </div>
+                <input class="form-control" type="text" id="location" placeholder="Location">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-3 control-label">Password:</label>
+              <label class="col-lg-3 control-label">Password:</label>
               <div class="col-md-8">
-                <input class="form-control" name="password" id="pw" type="password" value="11111122333">
+                <input class="form-control" name="password" id="pw" type="password" placeholder="password">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-3 control-label">Confirm password:</label>
+              <label class="col-lg-3 control-label">Confirm password:</label>
               <div class="col-md-8">
-                <input class="form-control" name="password" id="pw" type="password" value="11111122333">
+                <input class="form-control" name="password" id="pw" type="password" placeholder="password">
               </div>
             </div>
             <div class="form-group">
@@ -95,26 +85,74 @@
   </div>
 </div>
 
+<script src="js/parse.min.js"></script>
+<script src="js/script.js"></script>
+
 <script type="text/javascript">
-  function updateProf(){
 
-    var currentUser = Parse.User.current();
-    // var User = Parse.Object.extend("User");
+  // Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
 
-    var query= new Parse.Query(currentUser);
-    var objectID = currentUser.id;
+  // $(document).ready(function(){
+  //   $("#updateInfo").submit(function(e){
+  //         e.preventDefault();
+  //         updateProf();
+  //   });
+  //   retrieveUserInfo();   
+  // })
+
+  // function updateProf(){
+
+  //   var User = Parse.Object.extend("User");
+  //   var currentUser = Parse.User.current();
+  //   var query= new Parse.Query(User);
+  //   var currentUserID = currentUser.id;
     
-    // var email = $("#email").val();
-    var email = document.getElementById("email").value;
+  //   var email = $("#email").val();
+  //   var fname = $("#fname").val();
+  //   var lname = $("#lname").val();
+  //   var school = $("#school").val();
+  //   var user_time_zone = $("#user_time_zone").val();
+  //   var pw = $("#pw").val();
 
-    query.get.("S7pP59mEYF", {
-        success: function(){
-            currentUser.set("email", email);
-            currentUser.save();
-        },
-        error: function(user, error){
-            console.log(error.message);
-        }
-    })
-}
+  //   query.get(currentUserID, {
+  //       success: function(update){
+
+  //           update.set("email", email);
+  //           update.set("fname", fname);
+  //           update.set("lname", lname);
+  //           update.set("school", school);
+  //           update.set("user_time_zone", user_time_zone);
+  //           update.set("password", pw);
+  //           update.save();
+  //           alert("inside updateProf");
+  //       },
+  //       error: function(user, error){
+  //           console.log(error.message);
+  //       }
+  //   });
+  // }
+
+  // function retrieveUserInfo(){
+  //   var User = Parse.Object.extend("User");
+  //   alert("I'm inside getUserInfo");
+  //   var currentUser = Parse.User.current();
+  //   var query= new Parse.Query(User);
+  //   var currentUserID = currentUser.id;
+
+  //   query.find(currentUserID, {
+  //       success: function(retrieve){
+  //           var email = document.getElementById("email").value;
+  //           alert(email);
+  //           var email = retrieve.get("email");
+  //           var emailField = document.getElementById("email");
+  //           emailField.innerHTML = email;
+  //           alert("inside retrieveProf");
+  //           alert("retrive: ", retrieve);
+  //       },
+  //       error: function(query, error){
+  //           console.log(error.message);
+  //       }
+  //   });
+  // }
+
 </script>
