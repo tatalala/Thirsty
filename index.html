@@ -1,65 +1,157 @@
 <!DOCTYPE html>
-<html>
-
+<html class="no-skrollr">
 <head>
+	<meta charset="utf-8">
 
-  <meta charset="UTF-8">
-
-  <title>Index</title>
-
-  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
-
-  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-  <script src='js/jquery-2.1.1.js'></script>
-  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
-  <script src='js/parse.min.js'></script>
-<script src="js/script.js"></script>
-  
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
+	<link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/inspire.css" media="screen" type="text/css" />
+		
+    <script src="js/jquery-2.1.1.js"></script>
+   <script src="js/parse.min.js"></script>
+    
+	<title>Inspire & Inform</title>
+	
 </head>
 
 
+
 <body>
-    
-    
-   
-    
-  <script>
-    Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-    var currentUser = Parse.User.current();
-    $(function(){
-        if (currentUser)
-        {
-            $("#navbarLog").load("navbarLog.html");
-            
-        }
-        else
-            $("#navbar").load("navbar.html");
-    });
-      
-    function loggedOut(){ 
-        Parse.User.logOut();
-        alert("User Logged Out!");
-        location.href = "inspire.html";
-        } 
+	<!--
+		We position the images fixed and therefore need to place them outside of #skrollr-body.
+		We will then use data-anchor-target to display the correct image matching the current section (.gap element).
+	-->
+	
+	<script>
+		Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+      	var currentUser = Parse.User.current();
+		$(function(){
+			if(currentUser){
+				$("#navbarLog").load("navbarLog.html");
+			}
+			else{
+				$("#navbar").load("navbar.html");
+			}
+        	
+      	});
     </script>
 
-    <div id="navbar"></div>
-    <div id="navbarLog"></div>
-	
-  <div id='content'>
-    <ul id='items'>
-        <button name=logout onclick = loggedOut()>LOGOUT</button>
-      <li>#1</li>
-      <li>#2</li>
-      <li>#3</li>
-      <li>#4</li>
-      <li>#5</li>
-    </ul>
-  </div>
+	<div id="navbar"></div>
+	<div id="navbarLog"></div>
+    <br>
 
- 
-  
-    </body>
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#dragons + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/12/314978_10100121018724858_55712109_43971788_463838510_n.jpg)"
+			data-anchor-target="#dragons + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+		<!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+	</div>
+
+
+
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#bacons + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17.jpg)"
+			data-anchor-target="#bacons + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+	</div>
+
+
+
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#kittens + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg)"
+			data-anchor-target="#kittens + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+	</div>
+
+
+	<div
+		class="parallax-image-wrapper parallax-image-wrapper-100"
+		data-anchor-target="#testings + .gap"
+		data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+		data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+		<div
+			class="parallax-image parallax-image-100"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775.jpg)"
+			data-anchor-target="#testings + .gap"
+			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+		></div>
+	</div>
+
+
+
+	<div id="skrollr-body">
+
+
+		<div class="header" id="dragons">
+            <h1>The Thirst Project</h1>
+            <p>To learn more about the Thirst Project</p><h3>Please Scroll Down</h3>
+		</div>
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/12/314978_10100121018724858_55712109_43971788_463838510_n.jpg);"></div>
+		<div class="content" id="bacons">
+			<b><em>Did you know?</em></b>            
+            <p>Almost <b>1 Billion</b> people on our planet do not have access to safe, clean drinking water and proper sanitization. That’s one in every eight of us. 4,100 children die every day from diseases caused by contaminated water. The average distance a woman walks to collect water is 3.75 miles. The task of water-collecting falls on young girls, leaving them no time or energy for school. Without an education, it is nearly impossible to break the cycle of poverty. Without water, there is no life.</p>
+		</div>
+
+
+
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17.jpg);"></div>
+		<div class="content" id="kittens">
+            <h2>The Solution</h2>
+            <p>Water is the problem. Water is the solution. It might not cost as much to build and maintain a freshwater well as you think. The cost to build a freshwater well in the developing nations we work in ranges from between $7,800 in Uganda to $20,000 in Kenya. That means an entire COMMUNITY of people’s lives can be forever saved for as little as $7.8K! <br>When you bring safe water into a community, disease consistently drops consistently by upwards 88% nearly overnight! Child mortality drops by nearly 99% almost overnight! The solution is too simple and the victory points are too easily attainable for us to continue to ignore the #1 killer of children globally.</p><h3><b>The solution is water. The solution is us. <br><em>The solution is YOU!</em></b></h3>
+		</div>
+
+
+
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg);"></div>
+		<div class="content" id="testings">
+			<h2>Take Action</h2>
+            <p>“Love requires action.” Were not just about feeling good, we’re about doing good. Awareness, hype and excitement are great, but only if they result in lives changed. We believe everyone has the ability to do something and make an impact in this issue, no matter how young or old. We’ve seen power in low-level donations in large numbers, students and youth rallying together, volunteers uniting in compassion and corporate sponsors giving radically. <br><em><b>Now it’s YOUR turn!</b></em><br><b>Donate:</b> as little as $20 can provide one person with safe, clean water for twenty or more years! Give compassionately. Change a life. Give $20 a month. <b>Volunteer:</b> be a part of the Thirst family and involved in every aspect of the organization. <b>Raise Awareness:</b> knowing is half the battle, create an account with our app today to stay informed and be notified of events in your area.</p>
+		</div>
+
+		<div class="gap gap-100"  style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775.jpg);"></div>
+	</div>
+
+ <script type="text/javascript" src="js/skrollr.js"></script>
+	<script type="text/javascript">
+	skrollr.init({
+		smoothScrolling: false,
+		mobileDeceleration: 0.0004
+	});
+	</script>
+
+</body>
+
 </html>
 
 <script>
