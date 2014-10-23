@@ -38,17 +38,6 @@ function signUp(){
     });
 };
 
-/* End of signup script */
-function loggedIn(){
-    var currentUser = Parse.User.current();
-    if(currentUser){
-
-    }
-    else{
-
-    }
-}
-
 $(document).ready(function(){
     // $("#updateInfo").submit(function(e){
     //       e.preventDefault();
