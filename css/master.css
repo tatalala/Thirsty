@@ -184,7 +184,7 @@ h1{
   text-align: center;
   font-size: 25px;
 }
-form fieldset input[type="username"], input[type="password"], input[type="email"]{
+form fieldset input{
     margin-left: 10px;
     background-color: #fff;
 	border: 1px solid #c7d0d2;
@@ -200,7 +200,7 @@ form fieldset input[type="username"], input[type="password"], input[type="email"
 	width: 215px;
 	-webkit-appearance:none;
 }
-form fieldset button[type="submit"], button[type="button"], input[type="button"]{
+form fieldset button{
     margin-left: 10px;
     background-color: #33acaf;
 	border: none;

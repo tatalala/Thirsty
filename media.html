@@ -13,12 +13,20 @@
     <!--stub comment-->
   <body>
     <script>
-        $(function(){
-          $("#navbar").load("navbar.html");
-          $("#socialBtns").load("socialBtns.html");
-        });
+      Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+      	var currentUser = Parse.User.current();
+		$(function(){
+			if(currentUser){
+				$("#navbarLog").load("navbarLog.html");
+			}
+			else{
+				$("#navbar").load("navbar.html");
+			}
+        	$("#socialBtns").load("socialBtns.html");
+      	});
       </script>
       <div id="navbar"></div>
+      <div id="navbarLog"></div>
     <br>
  
       
