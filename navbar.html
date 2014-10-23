@@ -50,7 +50,7 @@
                         <fieldset>
                             <input type="username" name="username" placeholder="Username" id="1" size="20" required>
                             <input type="password" name="userpass" placeholder="Password" id="2" size="20" maxlength="254" required>
-                            <input type="button" value="Sign Up" onclick="location.href='signup.html'">
+                            <button onclick="location.href='signup.html'">Sign Up</button>
                             <button type="submit" id="signup" value="submit"> Log In </button>
                         </fieldset>
                     </form>
@@ -59,7 +59,6 @@
             
             <script>
                   Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-                
                  function logIn(){
                     //var user = new Parse.User();
                
@@ -67,7 +66,7 @@
                     {
                         success: function(user) 
                         {
-                            location.href = "user_profile.html";
+                            location.href = "inspire.html";
                         },
                         error: function(user, error) 
                         {
