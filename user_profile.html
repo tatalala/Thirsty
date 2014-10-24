@@ -192,7 +192,6 @@
                     var currentUser = Parse.User.current();
                     var query= new Parse.Query(User);
                     var currentUserID = currentUser.id;
-                    alert(currentUserID);
 
                     query.get(currentUserID, {
                     success: function(update){
@@ -264,7 +263,7 @@
                 pwField.innerHTML = rPassword;
                 cpwField.innerHTML = rPassword;    
                 email.innerHTML =  rEmail;       
-               alert(rEmail);
+               
             },
             error: function(query, error){
                 console.log(error.message);

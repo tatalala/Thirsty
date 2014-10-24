@@ -1,7 +1,6 @@
 /* Login script */
 Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
 
-<<<<<<< HEAD
 function logIn(){
      var username = document.getElementById('1').value;
      var password = document.getElementById('2').value;
