@@ -27,22 +27,36 @@
     <div id="navbarLog"></div>
     <div id="imag"></div>
     <div class="container"> 
-      <p class="text-center">As a 19 year-old college student living in one of the most expensive cities in the world with absolutely no money, all I could think was, “What can one person really do?” I didn’t really know, but I couldn’t live with this new knowledge inside of me and not act. So, I gathered seven of my closest college friends together and we decided to tell these people’s story. We pooled all of our money together (which literally amounted to $70) and were able to purchase 1,000 bottles of water. We took to Hollywood Boulevard and began giving them away for free just to get people to talk to us. We raised awareness to over 1,000 people about the water crisis that day and were able to turn $70, into $1,700. This was used to fund our first rehabilitation of a freshwater well.
-      <br><br>
-      We thought we were finished. We had helped a community get safe water, so we thought we’d go back to living our own lives. That is, until people started calling and asking us to bring our organization to their school or church to speak about the water crisis so they could help and get involved. “Organization?” We thought. “We’re just eight college kids. We have finals next week!” After a week of multiple requests, we decided to give it a shot. In our first month, these school and church speaking events had raised over $12,000. “Alright,” we thought. “I guess we have something here.” So The Thirst Project really was born out of a bunch of twenty-somethings using what we had to tell the story of the people with out safe water.
-      <br><br>
-      We now travel the country to Middle Schools, High Schools and College Campuses speaking to people our age. When we leave, students are really equipped to do their own fundraisers and make a real impact on the issue. In just five years, we’ve raised over $8 Million with this program and funded projects to provide over 300,000 people with safe, clean water! The need is great though. We can no longer ignore the #1 global killer of children. Our goal with The Thirst Project is to provide safe, clean water and sanitation to the entire nation of Swaziland by 2022.
-      <br><br>
-      With your help, we believe we can do this. With your help, we can give water. With your help, we can give life.</p>
-
-      <br/>
-
-      <p class="text-center"><i>-Seth Maxwell</i></p>
-      <p class="text-center">Founder &amp CEO</p>
+      <p class="text-center" id="aboutDescription"></p>
 	  <br>
 
       <hr/><br/>
       <div id="socialBtns"></div>
     </div>
+      <script>
+            Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+            
+            $(document).ready(function(){
+                getAbout();
+                //alert("1");
+                
+            })
+            
+            function getAbout(){
+                var About = Parse.Object.extend("About");
+                //alert("1.1");
+                var query = new Parse.Query(About);
+                query.get("FquNYT1DSn", {
+                    success: function(about){
+                     var description = about.get("description");    
+                     var myTxtArea = document.getElementById("aboutDescription");
+                     myTxtArea.innerHTML = description;
+                     //alert("2");
+                    }, 
+                    error: function(object, error){
+                    }
+            });               
+            }
+         </script>
   </body>
 </html>
