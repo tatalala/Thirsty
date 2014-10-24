@@ -42,9 +42,11 @@ $(document).ready(function(){
     // $("#updateInfo").submit(function(e){
     //       e.preventDefault();
     //       updateProf();
+
     // });
-    // retrieveUserInfo(); 
-    updateProf();  
+    // retrieveUserInfo();
+
+    //updateProf();  
     retrieveUserInfo();
   })
 
@@ -74,7 +76,7 @@ $(document).ready(function(){
             update.set("grade", grade);
             update.set("location", location);
             update.save();
-            alert("inside updateProf");
+           
         },
         error: function(user, error){
             console.log(error.message);
@@ -84,24 +86,24 @@ $(document).ready(function(){
 
 function retrieveUserInfo(){
     var User = Parse.Object.extend("User");
-    alert("I'm inside getUserInfo");
+   
     var currentUser = Parse.User.current();
     var query= new Parse.Query(User);
     var currentUserID = currentUser.id;
-
-    query.find(currentUserID, {
+    // alert(currentUserID);
+    query.get(currentUserID, {
         success: function(retrieve){
-            var fname = document.getElementById("fname").value;
-            alert(fname);
+            
             var rFname = retrieve.get("fname");
-            var fnameField = document.getElementById("fname");
+            // alert(rFname);
+            var fnameField = document.getElementById('fnameID');
             fnameField.innerHTML = rFname;
             
-            alert("inside retrieveProf after this will be retrieve");
-            alert(emailField.innerHTML);
+           
         },
         error: function(query, error){
             console.log(error.message);
+            // alert("fucked up");
         }
     });
 }

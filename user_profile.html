@@ -14,7 +14,7 @@
         <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
         <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
         <script src="js/parse.min.js"></script>
-        <script src="js/script.js"></script>
+        
     </head>
 
     <body>
@@ -72,7 +72,97 @@
                     </div>
                     <div class="tab-pane" id="edit">
                         <h1>Edit Profile</h1>
-                        <div id="editProfile"></div>
+                        <!-- <div id="editProfile"></div> -->
+
+
+                        <div class="container">
+                          <div class="text-center">
+                            <hr>
+                              <div class="row">
+                                <!-- left column -->
+                                <div class="col-md-3">
+                                  <div class="text-center">
+                                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                                    <h6>Upload a different photo...</h6>
+                                    
+                                    <input type="file" class="form-control"></input>
+                                  </div>
+                                </div>
+                                
+                                <!-- edit form column -->
+                                <div class="col-md-9 personal-info">
+                                  <div id="alert" class="alert alert-info alert-dismissable">
+                                    <a class="panel-close close" data-dismiss="alert">×</a> 
+                                    <i class="fa fa-coffee"></i>
+                                    This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                                  </div>
+                                  <h3>Personal info</h3>
+                                  
+                                  <form class="form-horizontal" id="updateInfo">
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">First name:</label>
+                                      <div class="col-lg-8">
+                                        <textarea rows="1" class="form-control" type="text" id="fnameID"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Last name:</label>
+                                      <div class="col-lg-8">
+                                        <textarea rows="1" class="form-control" type="text" id="lnameID" placeholder="Doe" ></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">School:</label>
+                                      <div class="col-lg-8">
+                                        <textarea rows="1" class="form-control" type="text" id="schoolID" placeholder="CSULB"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Grade:</label>
+                                      <div class="col-lg-8">
+                                        <textarea rows="1" class="form-control" type="text" id="gradeID" placeholder="sophomore/junior/senior/etc."></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Email:</label>
+                                      <div class="col-lg-8">
+                                        <textarea rows="1" class="form-control" type="text" id="emailID" placeholder="yourEmail@Thirst.org"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Location:</label>
+                                      <div class="col-lg-8">
+                                        <textarea rows="1" class="form-control" type="text" id="locationID" placeholder="Location"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Password:</label>
+                                      <div class="col-md-8">
+                                        <textarea rows="1" class="form-control" id="pwID" type="password" placeholder="password"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Confirm password:</label>
+                                      <div class="col-md-8">
+                                        <textarea rows="1" class="form-control" name="password" id="cpwID" type="password" placeholder="password"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-md-3 control-label"></label>
+                                      <div class="col-md-8">
+                                        <input type="button" class="btn btn-primary" value="Submit" onclick="test()">
+                                        <span></span>
+                                        <input type="reset" class="btn btn-default" value="Cancel">
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
                     </div>
                     <div class="tab-pane" id="settings">
                         <h1>Settings</h1>
@@ -82,23 +172,109 @@
             </div>
         </div>
 
-        <script type="text/javascript">            
-            $(function(){
-            $("#navbarLog").load("navbarLog.html");   
-            $("#socialBtns").load("socialBtns.html");
-            $("#editProfile").load("edit_profile.html");
+        <script type="text/javascript">
+            Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+
+                $(function(){
+                $("#navbarLog").load("navbarLog.html");   
+                $("#socialBtns").load("socialBtns.html");
+                $("#editProfile").load("edit_profile.html");
+                });
+
+                $(document).ready(function(){
+                    
+                        retrieveUserInfo();
+
+                })
+                
+                function test(){
+                    var User = Parse.Object.extend("User");
+                    var currentUser = Parse.User.current();
+                    var query= new Parse.Query(User);
+                    var currentUserID = currentUser.id;
+                    alert(currentUserID);
+
+                    query.get(currentUserID, {
+                    success: function(update){
+
+                var email = document.getElementById("emailID").value;
+                var fname = document.getElementById("fnameID").value;
+                var lname = document.getElementById("lnameID").value;
+                var school= document.getElementById("schoolID").value;
+                var grade = document.getElementById("gradeID").value;
+                var location = document.getElementById("locationID").value;
+                var pw = document.getElementById("pwID").value;
+                var cpw = document.getElementById("cpwID").value;
+
+                        update.set("email", email);
+                        update.set("fname", fname);
+                       
+                        update.set("lname", lname);
+                      
+                        update.set("school", school);
+                        
+                        update.set("password", pw);
+                        
+                        update.set("grade", grade);
+                        
+                        update.set("location", location);
+                        update.save();
+               
+                    },
+                    error: function(user, error){
+                        alert("failed");
+                        console.log(error.message);
+                    }
+                });
+
+                }
+
+
+            function retrieveUserInfo(){
+            var User = Parse.Object.extend("User");
+            var currentUser = Parse.User.current();
+            var query= new Parse.Query(User);
+            var currentUserID = currentUser.id;
+
+            query.get(currentUserID, {
+            success: function(retrieve){
+                
+                var rFname = retrieve.get("fname");
+                var rLname = retrieve.get("lname");
+                var rSchool = retrieve.get("school");
+                var rGrade = retrieve.get("grade");
+                var rLocation = retrieve.get("location");
+                var rPassword = retrieve.get("password");
+                 var rEmail = retrieve.get("email");
+                
+                var fnameField = document.getElementById("fnameID");
+                var lnameField = document.getElementById("lnameID");
+                var schoolField = document.getElementById("schoolID");
+                var gradeField = document.getElementById("gradeID");
+                var locationField = document.getElementById("locationID");
+                var pwField = document.getElementById("pwID");
+                var cpwField = document.getElementById("cpwID");
+                var email = document.getElementById("emailID");
+
+                fnameField.innerHTML = rFname;
+                lnameField.innerHTML = rLname;
+                schoolField.innerHTML = rSchool;
+                gradeField.innerHTML = rGrade;
+                locationField.innerHTML = rLocation;
+                pwField.innerHTML = rPassword;
+                cpwField.innerHTML = rPassword;    
+                email.innerHTML =  rEmail;       
+               alert(rEmail);
+            },
+            error: function(query, error){
+                console.log(error.message);
+               
+            }
             });
+            }
         </script>
 
         <script type="text/javascript" src='js/bootstrap.js'></script>
-        <script type="text/javascript" src="js/handlebars.js"></script>
-        <script src="js/script.js"></script>
-
-        <script type="text/x-handlebars-template" id="name-loc">
-            <p>{{username}}</p>
-            <p>{{email}}</p>
-            alert({{username}});
-        </script>
 
     </body>
 </html>
