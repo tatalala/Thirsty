@@ -24,40 +24,21 @@
    
     
   <script>
-    Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-    var currentUser = Parse.User.current();
-    $(function(){
-        if (currentUser)
-        {
-            $("#navbarLog").load("navbarLog.html");
-            
-        }
-        else
-            $("#navbar").load("navbar.html");
-    });
+//    Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+//    var currentUser = Parse.User.current();
+//    $(function(){
+//        if (currentUser)
+//        {
+//            $("#navbarLog").load("navbarLog.html");
+//            
+//        }
+//        else
+//            $("#navbar").load("navbar.html");
+//    });
       
-    function loggedOut(){ 
-        Parse.User.logOut();
-        alert("User Logged Out!");
-        location.href = "inspire.html";
-        } 
+      window.location.replace("inspire.html");
+      
     </script>
-
-    <div id="navbar"></div>
-    <div id="navbarLog"></div>
-	
-  <div id='content'>
-    <ul id='items'>
-        <button name=logout onclick = loggedOut()>LOGOUT</button>
-      <li>#1</li>
-      <li>#2</li>
-      <li>#3</li>
-      <li>#4</li>
-      <li>#5</li>
-    </ul>
-  </div>
-
- 
   
     </body>
 </html>
