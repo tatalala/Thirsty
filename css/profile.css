@@ -155,3 +155,6 @@ body{
 	vertical-align: top;
 }	
 
+textarea{
+  resize: none;
+}
