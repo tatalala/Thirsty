@@ -5,13 +5,13 @@
 }
 
 a:visited{
-  color: #000000;
+  color: #000000 !important;
 }
 a:hover{
-  color: #000000;
+  color: #000000 !important;
 }
 a:active{
-  color: #000000;
+  color: #000000 !important;
 }
 ::selection{
   color:transparent;
@@ -175,7 +175,7 @@ a{
   width: inherit;
   height: inherit;
   padding-left: 10px;
-  color: #000000;
+  color: #000000 !important;
 }
 p {
   font-size: 15px;
