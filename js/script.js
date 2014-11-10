@@ -16,26 +16,26 @@ function logIn(){
 };
 ///* Signup script */
 function signUp(){
-        var user = new Parse.User();
-        var confirmPass = document.getElementById('confirmpass').value;
-        var userPass =  document.getElementById('userpass').value;
-        if(confirmPass == userPass){
-            user.set("username", document.getElementById('a').value);
-            user.set("password", userPass);
-            user.set("email", document.getElementById('c').value);
-            user.signUp(null,{
-              success: function(user){
-                location.href = 'user_profile.html';
-              },
-              error: function(user, error){
-                alert("Error: " + error.code + " " + error.message);
-              }
-            });
+  var user = new Parse.User();
+  var confirmPass = document.getElementById('confirmpass').value;
+  var userPass =  document.getElementById('userpass').value;
+  if(confirmPass == userPass){
+      user.set("username", document.getElementById('a').value);
+      user.set("password", userPass);
+      user.set("email", document.getElementById('c').value);
+      user.signUp(null,{
+        success: function(user){
+          location.href = 'user_profile.html';
+        },
+        error: function(user, error){
+          alert("Error: " + error.code + " " + error.message);
         }
-        else{
-            alert("Error: Password does not match");
-        }
-      };
+      });
+  }
+  else{
+      alert("Error: Password does not match");
+  }
+};
 
 function loggedout(){
 				Parse.User.logOut();

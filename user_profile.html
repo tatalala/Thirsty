@@ -8,8 +8,6 @@
     
     <head>
         <link rel="stylesheet" type="text/css" href="css/profile.css">
-        <link rel="stylesheet" type="text/css" href="css/master.css">
-        <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
         <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
@@ -24,11 +22,11 @@
             <div class="center" id="content" style="text-align:center;">
                 <div class="navtab1">
                     <div class="user-image">
-                    <img src="icon.png" alt="Totoro" title="Totoro" class="img-circle">
+                    <img id="gImageID" src=""  width="100" height="100" alt="ProfilePicture" title="ProfilePicture" class="img-circle">
                     </div>
                     <div class="user-heading" id="fullname">
-                        <!-- <h3>Totoro Lastname</h3>
-                        <span class="help-block">Long Beach, CA</span> -->
+                        <h3 id="topFullname"></h3>
+                        <span id="topLoc" class="help-block"></span>
                     </div>
                     <ul id="tabs" class="nav navtab1 nav-tabs" data-tabs="tabs">
                         <li class="active">
@@ -54,56 +52,60 @@
                     </ul>
                 </div>
             </div>
-            <div class="center">
+            <div class="info">
                 <div id="my-tab-content" class="tab-content">
                     <div class="tab-pane active" id="information">
                         <form id="displayInfo" action="javascript:retrieveInfo()">
                             <h1>General Info</h1>
-                            <div id="name">Name: </div>
-                            <div id="name">Location: </div>
-                            <div id="email">Email:</div>
-                            <div id="school">School:</div>
-                            <div id="grade">Grade:</div>
+                            <div class="container-fluid">
+                                <div id="gInfoID" class="row col-lg-8">
+                                    <div class="col-xs-4 leftblock">Name:</div>
+                                    <div class="col-xs-6 col-centered" id="gFnameID"></div>
+                                    <div class="col-xs-4 leftblock">Location:</div>
+                                    <div class="col-xs-6 col-centered" id="gLocID"></div>
+                                    <div class="col-xs-4 leftblock">School:</div>
+                                    <div class="col-xs-6 col-centered" id="gSchoolID"></div>
+                                    <div class="col-xs-4 leftblock">Grade:</div>
+                                    <div class="col-xs-6 col-centered" id="gGradeID"></div>
+                                </div>
+                            </div>  
                         </form>
                     </div>
-                    <div class="tab-pane" id="events">
+                    <div class="tab-pane center" id="events">
                         <h1>Events</h1>
-                        <p>To be update</p>
+                        <p class="center">To be update</p>
                     </div>
                     <div class="tab-pane" id="edit">
                         <h1>Edit Profile</h1>
-                        <!-- <div id="editProfile"></div> -->
-
 
                         <div class="container">
                           <div class="text-center">
                             <hr>
                               <div class="row">
                                 <!-- left column -->
-                                <div class="col-md-3">
-                                  <div class="text-center">
-                                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                                    <h6>Upload a different photo...</h6>
-                                    
-                                    <input type="file" class="form-control"></input>
-                                  </div>
+                                <div class="col-md-3" >
+                                    <div class="text-center">
+                                        <img id="imgID" width="100" height="100" class="avatar img-circle" alt="avatar">
+                                        <h6>Upload a different photo...</h6>
+
+                                        <input type="file" id="imageID" class="form-control" accept="image/*"/></input>
+                                    </div>
                                 </div>
                                 
                                 <!-- edit form column -->
                                 <div class="col-md-9 personal-info">
-                                  <div id="alert" class="alert alert-info alert-dismissable">
-                                    <a class="panel-close close" data-dismiss="alert">×</a> 
-                                    <i class="fa fa-coffee"></i>
-                                    This is an <strong>.alert</strong>. Use this to show important messages to the user.
-                                  </div>
-                                  <h3>Personal info</h3>
+                                    <div id="alert" hidden="true" class="alert alert-info alert-dismissable alert-success">
+                                        <a class="panel-close close" data-dismiss="alert">×</a> 
+                                        <i class="fa fa-coffee"> Hi!</i>
+                                    </div>
+                                    <h3>Personal info</h3>
                                   
-                                  <form class="form-horizontal" id="updateInfo">
-                                    <div class="form-group">
-                                      <label class="col-lg-3 control-label">First name:</label>
-                                      <div class="col-lg-8">
-                                        <textarea rows="1" class="form-control" type="text" id="fnameID"></textarea>
-                                      </div>
+                                    <form class="form-horizontal" id="updateInfo">
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label">First name: </label>
+                                            <div class="col-lg-8">
+                                                <textarea rows="1" class="form-control" type="text" id="fnameID"></textarea>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Last name:</label>
@@ -138,19 +140,19 @@
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Password:</label>
                                       <div class="col-md-8">
-                                        <textarea rows="1" class="form-control" id="pwID" type="password" placeholder="password"></textarea>
+                                        <input class="form-control" id="pwID" type="password" placeholder="password"></input>
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Confirm password:</label>
                                       <div class="col-md-8">
-                                        <textarea rows="1" class="form-control" name="password" id="cpwID" type="password" placeholder="password"></textarea>
+                                        <input class="form-control" name="password" id="cpwID" type="password" placeholder="password"></input>
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-3 control-label"></label>
                                       <div class="col-md-8">
-                                        <input type="button" class="btn btn-primary" value="Submit" onclick="test()">
+                                        <input type="button" class="btn btn-primary" value="Submit" onclick="update()">
                                         <span></span>
                                         <input type="reset" class="btn btn-default" value="Cancel">
                                       </div>
@@ -159,12 +161,9 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-
-
-
+                        </div> <!-- end edit profile portion -->
                     </div>
-                    <div class="tab-pane" id="settings">
+                    <div class="tab-pane center" id="settings">
                         <h1>Settings</h1>
                         <input type="checkbox" name="option" value="notif"> Notification(on/off)
                     </div>
@@ -175,102 +174,205 @@
         <script type="text/javascript">
             Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
 
-                $(function(){
-                $("#navbarLog").load("navbarLog.html");   
-                $("#socialBtns").load("socialBtns.html");
-                $("#editProfile").load("edit_profile.html");
+            loadImage();
+
+            $(function(){
+                    $("#navbarLog").load("navbarLog.html");   
+                    $("#socialBtns").load("socialBtns.html");
                 });
 
-                $(document).ready(function(){
-                    
-                        retrieveUserInfo();
-
-                })
+            $(document).ready(function(){
                 
-                function test(){
-                    var User = Parse.Object.extend("User");
-                    var currentUser = Parse.User.current();
-                    var query= new Parse.Query(User);
-                    var currentUserID = currentUser.id;
+                    $("#upload").click(function(){
+                        $("#imageID").click();
+                        // $("#imageID").change(function(){
+                        //     readURL(this);
+                        // });
+                    });
 
-                    query.get(currentUserID, {
+                    retrieveUserInfo();
+
+            })
+
+            function update(){
+                updateProf();
+                updateImage();
+            }
+            
+            function updateProf(){
+                var User = Parse.Object.extend("User");
+                var currentUser = Parse.User.current();
+                var query= new Parse.Query(User);
+                var currentUserID = currentUser.id;
+
+                query.get(currentUserID, {
+
                     success: function(update){
+                        var email = document.getElementById("emailID").value;
+                        var fname = document.getElementById("fnameID").value;
+                        var lname = document.getElementById("lnameID").value;
+                        var school= document.getElementById("schoolID").value;
+                        var grade = document.getElementById("gradeID").value;
+                        var location = document.getElementById("locationID").value;
+                        var pw = document.getElementById("pwID").value;
+                        var cpw = document.getElementById("cpwID").value;
 
-                var email = document.getElementById("emailID").value;
-                var fname = document.getElementById("fnameID").value;
-                var lname = document.getElementById("lnameID").value;
-                var school= document.getElementById("schoolID").value;
-                var grade = document.getElementById("gradeID").value;
-                var location = document.getElementById("locationID").value;
-                var pw = document.getElementById("pwID").value;
-                var cpw = document.getElementById("cpwID").value;
+                        var text;
 
-                        update.set("email", email);
-                        update.set("fname", fname);
-                       
-                        update.set("lname", lname);
-                      
-                        update.set("school", school);
-                        
-                        update.set("password", pw);
-                        
-                        update.set("grade", grade);
-                        
-                        update.set("location", location);
-                        update.save();
+                        if((pw == cpw)){
+                            
+                            var choice = confirm("You sure still want to update your information? :)");
+
+                            if(choice == true)
+                            {
+                                update.set("email", email);
+                                update.set("fname", fname);                       
+                                update.set("lname", lname);                      
+                                update.set("school", school);                        
+                                update.set("password", pw);                        
+                                update.set("grade", grade);                        
+                                update.set("location", location);
+                                update.save();
+                            
+                                window.location.reload(true);
                
+                            }
+                            else
+                            {
+                                alert("You did not change your info");
+                            }
+
+                        }
+                        else
+                        {
+                            alert("Password does not match, please try again!");
+                        }
+
                     },
                     error: function(user, error){
                         alert("failed");
                         console.log(error.message);
                     }
                 });
-
-                }
-
+                
+            }
 
             function retrieveUserInfo(){
-            var User = Parse.Object.extend("User");
-            var currentUser = Parse.User.current();
-            var query= new Parse.Query(User);
-            var currentUserID = currentUser.id;
 
-            query.get(currentUserID, {
-            success: function(retrieve){
-                
-                var rFname = retrieve.get("fname");
-                var rLname = retrieve.get("lname");
-                var rSchool = retrieve.get("school");
-                var rGrade = retrieve.get("grade");
-                var rLocation = retrieve.get("location");
-                var rPassword = retrieve.get("password");
-                 var rEmail = retrieve.get("email");
-                
-                var fnameField = document.getElementById("fnameID");
-                var lnameField = document.getElementById("lnameID");
-                var schoolField = document.getElementById("schoolID");
-                var gradeField = document.getElementById("gradeID");
-                var locationField = document.getElementById("locationID");
-                var pwField = document.getElementById("pwID");
-                var cpwField = document.getElementById("cpwID");
-                var email = document.getElementById("emailID");
+                var User = Parse.Object.extend("User");
+                var currentUser = Parse.User.current();
+                var query= new Parse.Query(User);
+                var currentUserID = currentUser.id;
 
-                fnameField.innerHTML = rFname;
-                lnameField.innerHTML = rLname;
-                schoolField.innerHTML = rSchool;
-                gradeField.innerHTML = rGrade;
-                locationField.innerHTML = rLocation;
-                pwField.innerHTML = rPassword;
-                cpwField.innerHTML = rPassword;    
-                email.innerHTML =  rEmail;       
-               
-            },
-            error: function(query, error){
-                console.log(error.message);
-               
+                query.get(currentUserID, {
+
+                    success: function(retrieve){
+                        var rFname = retrieve.get("fname");
+                        var rLname = retrieve.get("lname");
+                        var rSchool = retrieve.get("school");
+                        var rGrade = retrieve.get("grade");
+                        var rLocation = retrieve.get("location");
+                        var rPassword = retrieve.get("password");
+                        var rEmail = retrieve.get("email");
+
+                        // get and set edit info fields
+                        var fnameField = document.getElementById("fnameID");
+                        var lnameField = document.getElementById("lnameID");
+                        var schoolField = document.getElementById("schoolID");
+                        var gradeField = document.getElementById("gradeID");
+                        var locationField = document.getElementById("locationID");
+                        var pwField = document.getElementById("pwID");
+                        var cpwField = document.getElementById("cpwID");
+                        var email = document.getElementById("emailID");
+
+                        fnameField.innerHTML = rFname;
+                        lnameField.innerHTML = rLname;
+                        schoolField.innerHTML = rSchool;
+                        gradeField.innerHTML = rGrade;
+                        locationField.innerHTML = rLocation;
+                        pwField.innerHTML = rPassword;
+                        cpwField.innerHTML = rPassword;    
+                        email.innerHTML =  rEmail; 
+
+                        var fullName = rFname.concat(" " + rLname);
+
+                        //set general info field
+                        document.getElementById("gFnameID").innerHTML = fullName;
+                        document.getElementById("gLocID").innerHTML = rLocation;
+                        document.getElementById("gSchoolID").innerHTML = rSchool;
+                        document.getElementById("gGradeID").innerHTML = rGrade;
+
+                        // set top info field
+                        document.getElementById("topFullname").innerHTML = fullName;
+                        document.getElementById("topLoc").innerHTML = rLocation;
+
+                    },
+                    error: function(query, error){
+                        alert("Could not retrieve your information! :(");
+                   
+                        }
+                });
             }
-            });
+
+            function loadImage(){
+
+                var photoURL = "";
+                var User = Parse.Object.extend("User");
+                var currentUser = Parse.User.current();
+                var query= new Parse.Query(User);
+                var currentUserID = currentUser.id;
+
+                query.get(currentUserID, {
+                    success: function(profile){
+                        var photo = profile.get("img"); 
+                        photoURL = photo.url();
+                        
+                        $('#gImageID')[0].src = photoURL;
+                        $('#imgID')[0].src = photoURL;
+                    }, 
+                    error: function(object, error){
+                        alert("Could not retrieve your iamge! :(");
+                    }
+                });        
             }
+            
+            function updateImage(){
+
+                //query to parse for the each user's objectID
+                var User = Parse.Object.extend("User");
+                var query = new Parse.Query(User);
+                var currentUser = Parse.User.current();
+                var currentUserID = currentUser.id;
+
+                //grab the image in a variable
+                var upImage = $("#imageID")[0];
+                if (upImage.files.length > 0 ){
+
+                    var file = upImage.files[0];
+                    var name = "profilePhoto.png";
+
+                    var parseFile = new Parse.File(name, file);
+
+                    parseFile.save().then(function(){
+                            
+                            query.get(currentUserID, {
+                                    success: function(sendimage){    
+                                        //save the image
+                                        sendimage.set("img", parseFile);
+                                        sendimage.save();
+                                    }, 
+                                    error: function(object, error){
+                                }
+                            });
+                        }, 
+                        function(error) {
+                          alert("Could not update image :(");
+                        })
+                }
+
+                //location.reload();
+            }
+
         </script>
 
         <script type="text/javascript" src='js/bootstrap.js'></script>
