@@ -61,7 +61,7 @@ form fieldset{
   width: 300px;
   height: 100%;
   background: #eeeeee;
-  color: black;
+  color: black !important;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-transform: translate3d(-100%, 0, 0);
@@ -73,7 +73,7 @@ form fieldset{
 
 
 #mySlideToggler{
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000000 !important;
 }
 #mySlideContent{
   margin-right: 20px;
@@ -83,7 +83,7 @@ form fieldset{
   background-color: #transparent;
   border:thin;
 
-  color: #000000;
+  color: #000000 !important;
   font-size: 30px;
   font-weight: 300;
   line-height: 1.6em;
@@ -103,7 +103,7 @@ form fieldset{
   background-color: transparent;
   left:-8px;
   border:thin;
-  color: #000000;
+  color: #000000 !important;
   font-size: 30px;
   font-weight: 300;
   line-height: 1.6em;
