@@ -1,92 +1,77 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <title>Events</title>
 
-        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
-        <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
-<!--        <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css"/>-->
-        <script src="js/parse.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/jquery-2.1.1.js"></script>
-<!--        <script src="js/jQueryMobile/jquery.mobile-1.4.4.js"></script>-->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300">
+    <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/events.css" media="screen" type="text/css" />
+    <script src="js/parse.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
+</head>
 
-    <body>
-        
-        
-     
-        
-        <script>
-        //Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-      	var currentUser = Parse.User.current();
-		$(function(){
-			if(currentUser){
-				$("#navbarLog").load("navbarLog.html");
-			}
-			else{
-				$("#navbar").load("navbar.html");
-			}
-        	
-      	});
-        </script>
+<body>
+    <script>
+        var currentUser = Parse.User.current();
+        $(function () {
+            if (currentUser) {
+                $("#navbarLog").load("navbarLog.html");
+            } else {
+                $("#navbar").load("navbar.html");
+            }
+        });
+    </script>
 
+    <div id="navbar"></div>
+    <div id="navbarLog"></div>
+    <div id="mainList">
+        <ul id="eventList" class="list">
 
-        
-       <div data-role="page">
-           <div data-role="header">
-               <div id="navbar"></div>
-               <div id="navbarLog"></div>
-           </div>
-           
-        <br><br>
-           
-        <div data-role="main" class="ui-content" id="mainList">
-         <ul data-role="listview" data-inset="true" id="eventList">
-<!--
-             <li><a href="#download" data-transition="slide">List Item</a></li>
-             <li><a href="#download" data-transition="pop">List Item2</a></li>
--->
-         </ul>
-        </div>
-        </div> 
-    
-        <script>
-            
-         $(document).ready(function(){ 
-         $.ajax({
-              url : 'https://api.parse.com/1/classes/Event',  
-              type : 'GET',
-              dataType: 'JSON',
-              contentType : 'application/json',
-              headers : {
-                'X-Parse-Application-Id' : 'YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804',    
-                'X-Parse-REST-API-Key' : '0WI42B9WJvdTG1p4iQDUMzirXrUapZKwxf139Icl'
-              },
-              error : function(data) {
-                console.log('error');
-              },
-              success : function(data) {
-                  loadEventList(data);
-              },
-              complete : function() {
-                  $('#eventList').listview('refresh'); 
-              }
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://api.parse.com/1/classes/Event',
+                type: 'GET',
+                dataType: 'JSON',
+                contentType: 'application/json',
+                headers: {
+                    'X-Parse-Application-Id': 'YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804',
+                    'X-Parse-REST-API-Key': '0WI42B9WJvdTG1p4iQDUMzirXrUapZKwxf139Icl'
+                },
+                error: function (data) {
+                    console.log('error');
+                },
+                success: function (data) {
+                    loadEventList(data);
+                },
+                complete: function () {
+                    $('#eventList').listview('refresh');
+                }
             });
-         //$('#eventList').trigger('create');
-         });
-            
-        function loadEventList(data){
+            //$('#eventList').trigger('create');
+        });
 
-          for(var i=0; i<data.results.length;i++){
-            var event = data.results[i];
-            $('#eventList').append('<li><a href="#">' +event.title+ '</a></li>');     
-            
-            }//end of for-loop
-            
-          }//end of load events
-        </script>
-        
-    </body>
+        function loadEventList(data) {
+
+            for (var i = 0; i < data.results.length; i++) {
+                var event = data.results[i];
+                $('#eventList').append('<div id="eventInstance"><li id = "eventElement"><a href="#">' + event.title + '</a></li>' + '<ul>' + '<li id="description">' + event.description + '</li>' + "</ul></li></div><br>");
+
+            } //end of for-loop
+
+        } //end of load events
+
+        $('.list > li a').click(function () {
+            $(this).parent().find('ul').toggle();
+            alert("test");
+        });
+    </script>
+
+</body>
+
 </html>
