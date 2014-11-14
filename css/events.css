@@ -83,11 +83,11 @@ a:visited:active {
     padding-right: 10%;
     padding-bottom: 10%;
 }
-#eventInstance {
+.description,#eventElement,.eventElement{
     border-style: outset;
     border-color: #629ca1;
 }
-#description {
+.description {
     display: none;
 }
 #eventTitle {}

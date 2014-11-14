@@ -10,6 +10,9 @@
     <script src="js/parse.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" 
+            src="http://maps.google.com/maps/api/js?key=AIzaSyApYnIeec0t6SQX29_ZV2fIwlNlRKZL91U">
+    </script>
 </head>
 
 <body>
@@ -26,14 +29,28 @@
 
     <div id="navbar"></div>
     <div id="navbarLog"></div>
-    <div id="mainList">
-        <ul id="eventList" class="list">
-
+    <div id="mainList" >
+        <ul class="list" id="eventList">
+            
         </ul>
     </div>
 
     <script>
         $(document).ready(function () {
+            popEvents();
+//            $('.list').on('click', function(){
+//             $('#description').slideToggle("slow"); 
+//             });
+            $(document).on("click", "#eventElement", function() {
+//              //grab the objectID
+            var objectID = $(this).attr('class');
+            popMap(objectID);    
+            $('#'+objectID).slideToggle("slow");
+//            alert(objectID);
+            });
+        });
+        
+        function popEvents(){
             $.ajax({
                 url: 'https://api.parse.com/1/classes/Event',
                 type: 'GET',
@@ -53,23 +70,48 @@
                     $('#eventList').listview('refresh');
                 }
             });
-            //$('#eventList').trigger('create');
-        });
+        }
 
         function loadEventList(data) {
 
             for (var i = 0; i < data.results.length; i++) {
                 var event = data.results[i];
-                $('#eventList').append('<div id="eventInstance"><li id = "eventElement"><a href="#">' + event.title + '</a></li>' + '<ul>' + '<li id="description">' + event.description + '</li>' + "</ul></li></div><br>");
+//                var gMap = popMap(event.objectId);
+                
+                $('#eventList').append('<div id="eventElement" class="' +event.objectId+ '">' 
+                                        + event.title +'</div>' + 
+                                        '<div id="' +event.objectId+ '" class="description" style="width: 545px; height:500px">'+event.description +'</div><br>');
+                
 
             } //end of for-loop
 
         } //end of load events
-
-        $('.list > li a').click(function () {
-            $(this).parent().find('ul').toggle();
-            alert("test");
-        });
+        
+        function popMap(id){
+            var map;
+            var Event = Parse.Object.extend("Event");
+            var query = new Parse.Query(Event);
+            query.get(id, {
+                success: function(eventLoc){
+                    var loc = eventLoc.get("location");
+                    function initialize(){
+//                        alert(loc.latitude + loc.longtitude);
+                        var latlng = new google.maps.LatLng(loc.latitude, loc.longtitude);
+                        var mapOptions = {
+                            zoom: 8,
+                            center: latlng
+                        };
+                        map = new google.maps.Map(document.getElementById(id), mapOptions);
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            map: map
+                        });
+                    }
+                 window.onload(initialize());   
+                }//end of success
+            
+            });//end of query
+        }
     </script>
 
 </body>
