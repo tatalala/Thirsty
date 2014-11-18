@@ -1,76 +1,17 @@
-nav {} nav ul {
-    top: 0px;
-    left: 0px;
+html,
+body {
+    background-color: #f5f5f5;
+    width: 100%;
     height: 100%;
-    width: 300px;
-    overflow: hidden;
-    overflow-y: scroll;
-    list-style-type: none;
-    padding: 0;
     margin: 0;
-    background: #d3d3d3;
-    position: fixed;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
 }
-nav ul li {
-    text-align: center;
-}
-li {
-    width: 100%;
-}
-#map_canvas {
-    width: 100%;
-    height: 100%;
-}
-#imag {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    top: 0px;
-    background-size: contain;
-    background-position: 300px 0px;
-    height: 600px;
-    right: 0px;
-    position: relative;
-    width: -300px;
-}
-#event_page_container {
-    margin: 0 auto;
-    min-width: 10px;
-    position: fixed;
-    width: 100%;
-    left: 300px;
-    top: -300px;
-    overflow-x: auto;
-}
-#event_page_container h1 {
-    padding-left: 15px;
-}
-#event_page_container h2 {
-    padding-left: 15px;
-}
-#event_page_container p {
-    padding-left: 15px;
-}
-#new_event {
-    text-align: center;
-}
-.button {
-    text-align: center;
-    margin-top: 0px;
-    top: 250px;
-    right: 0px;
-    position: fixed;
-    border: 1px solid #333;
-    background: #d3d3d3;
-    color: #fff;
-    height: 50px;
-    width: -300px;
-    left: 300px;
-}
+
 a:link,
 a:visited {
     color: #000000 !important;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: auto;
 }
 a:link:active,
@@ -78,16 +19,29 @@ a:visited:active {
     color: #629ca1 !important;
 }
 #mainList {
-    padding-top: 10%;
+    padding-top: 1%;
     padding-left: 0%;
-    padding-right: 10%;
-    padding-bottom: 10%;
+    padding-right: 5%;
+    padding-bottom: 0%;
 }
-.description,#eventElement,.eventElement{
-    border-style: outset;
-    border-color: #629ca1;
+.description,#eventElement{
+    border-color: #33ACAF;
+    background-color: white;
+    border-radius: 3px;
+	border: 1px solid #ccc;
+    text-align: center;
+/*
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+*/
 }
 .description {
     display: none;
 }
 #eventTitle {}
+#imag{
+    background: url("http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg") no-repeat top center fixed;
+    background-size: contain;
+    background-position: 100% 40px;
+    height: 35%;
+}

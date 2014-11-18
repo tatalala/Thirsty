@@ -28,6 +28,7 @@
         </script>
         <div id="navbar"></div>
         <div id="navbarLog"></div>
+        <div id="imag"></div>
         <div id="mainList">
             <ul class="list" id="eventList">
                 
@@ -78,7 +79,7 @@
                 
                 $('#eventList').append('<div id="eventElement" class="' +event.objectId+ '">'+ event.title +'</div>' + 
                                         '<div id="' +event.objectId+ '" class="description">'+event.description +
-                                       '<div id="map-'+event.objectId+'" style="width:300px;height:300px"></div>'+'</div><br>');
+                                       '<div id="map-'+event.objectId+'" style="width:300px;height:300px;margin-left:auto;margin-right:auto"></div>'+'</div><br>');
     
 
             } //end of for-loop
