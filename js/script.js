@@ -47,7 +47,7 @@ function showButton(){
     if(currUser != null && admin == true){
         $("#addEvent").attr('class',"");
     }
-}
+};
 function createEvent(){
     var Event = Parse.Object.extend("Event");
     var newEvent = new Event();
