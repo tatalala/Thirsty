@@ -178,7 +178,7 @@ h1 {
     text-align: center;
     font-size: 25px;
 }
-form fieldset input {
+input[id="1"],input[id="2"] {
     margin-left: 10px;
     background-color: #fff;
     border: 1px solid #c7d0d2;
@@ -193,6 +193,10 @@ form fieldset input {
     padding: 0px 10px;
     width: 215px;
     -webkit-appearance: none;
+}
+input:focus{
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
 }
 form fieldset button {
     margin-left: 10px;
@@ -209,6 +213,24 @@ form fieldset button {
     text-transform: uppercase;
     width: 100px;
     -webkit-appearance: none;
+}
+button[id="addEvent"]{
+    float: right;
+    margin-right: 10%;
+    background-color: #33acaf;
+    border: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #f4f4f4;
+    cursor: pointer;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    height: 35px;
+    text-transform: uppercase;
+    width: 100px;
+    -webkit-appearance:none;
+    margin-bottom: 20px;
 }
 .form-control:focus {
     border-color: #33ACAF;

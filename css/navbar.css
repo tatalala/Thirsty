@@ -10,7 +10,7 @@ form fieldset{
   margin-right: 100px;
 }
 #three-lines{
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   color: #424242;
   left: -10px;
 }

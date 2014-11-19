@@ -34,6 +34,7 @@
                 
             </ul>
         </div>
+        <button class="hidden" id="addEvent">Add Event</button>
         <script>
         $(document).ready(function () {
             popEvents();
@@ -47,6 +48,7 @@
             $('#'+objectID).slideToggle("slow");
 //            alert(objectID);
             });
+            showButton();
         });
         
         function popEvents(){
@@ -79,7 +81,7 @@
                 
                 $('#eventList').append('<div id="eventElement" class="' +event.objectId+ '">'+ event.title +'</div>' + 
                                         '<div id="' +event.objectId+ '" class="description">'+event.description +
-                                       '<div id="map-'+event.objectId+'" style="width:300px;height:300px;margin-left:auto;margin-right:auto"></div>'+'</div><br>');
+                                       '<div id="map-'+event.objectId+'" class="map"></div>'+'</div><br>');
     
 
             } //end of for-loop

@@ -18,11 +18,11 @@ a:link:active,
 a:visited:active {
     color: #629ca1 !important;
 }
-#mainList {
+#eventList {
     padding-top: 1%;
-    padding-left: 0%;
+    padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 0%;
+    padding-bottom: 0px;
 }
 .description,#eventElement{
     border-color: #33ACAF;
@@ -38,10 +38,20 @@ a:visited:active {
 .description {
     display: none;
 }
+.map{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    width: 75%;
+    height: 250px;
+}
 #eventTitle {}
 #imag{
     background: url("http://www.thirstproject.org/wp-content/uploads/2012/04/Lucy-Chien-1.jpg") no-repeat top center fixed;
     background-size: contain;
     background-position: 100% 40px;
     height: 35%;
+}
+.hidden{
+    display: none;
 }
