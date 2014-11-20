@@ -52,26 +52,28 @@
   {
     Parse.initialize(this, "YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "hcqiTOGKd1oU8tMOmAktohi9zYlHU99qA6tPD4kv");
     // Also in this method, specify a default Activity to handle push notifications
-    PushService.setDefaultPushCallback(this, YourActivity.class);
+    PushService.setDefaultPushCallback(this, pushTest.class);
   }
 
-  Parse.Push.send(
+  function pushTest()
   {
-    channels: [ "Giants", "Mets" ],
-    data: 
-    {
-      alert: "The Giants won against the Mets 2-3."
-    }
-  }, 
-  {
-    success: function() {
-      // Push was successful
-      alert("successful");
-    },
-    error: function(error) {
-      // Handle error
-      alert("failed!");
+      Parse.Push.send(
+      {
+          channels: [ "Giants", "Mets" ],
+          data: 
+          {
+            alert: "The Giants won against the Mets 2-3."
+          }
+        }, 
+        {
+          success: function() {
+            // Push was successful
+            alert("successful");
+          },
+          error: function(error) {
+            // Handle error
+            alert("failed!");
+        }
+      });
   }
-});
-
 </script>
