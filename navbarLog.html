@@ -18,17 +18,17 @@
 		  	<label for='menu-checkbox' id='menu-btn' class="navbar-brand">
 		    	<span id='three-lines'>&#8801;</span>
 		    	<img id="logo" src="assets/blacklogo.png">
+		    	<span id="current_url"></span>
+		    	<script  type="text/javascript">
+                    jQuery(document).ready(function() {
+                    var href = jQuery(location).attr('href');
+                    var url = jQuery(this).attr('title');
+                    jQuery('#current_title').html(href);
+                    jQuery('#current_url').html(url);
+                    });
+                </script>
 		  	</label>
 		</div>
-<!--
-		<script>
-		Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-			function loggedout(){
-				Parse.User.logOut();
-				location.href = "inspire.html";
-			}
-		</script>
--->
 
 		<input id='menu-checkbox' type='checkbox'>
 		<nav id='menu'>

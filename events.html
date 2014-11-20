@@ -6,20 +6,15 @@
 
         <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
         <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
-<!--        <link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css"/>-->
+        <link rel="stylesheet" href="css/events.css" media="screen" type="text/css" />
         <script src="js/parse.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/jquery-2.1.1.js"></script>
-<!--        <script src="js/jQueryMobile/jquery.mobile-1.4.4.js"></script>-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyApYnIeec0t6SQX29_ZV2fIwlNlRKZL91U"></script>
     </head>
 
     <body>
-        
-        
-     
-        
         <script>
-        //Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
       	var currentUser = Parse.User.current();
 		$(function(){
 			if(currentUser){
@@ -31,62 +26,93 @@
         	
       	});
         </script>
-
-
-        
-       <div data-role="page">
-           <div data-role="header">
-               <div id="navbar"></div>
-               <div id="navbarLog"></div>
-           </div>
-           
-        <br><br>
-           
-        <div data-role="main" class="ui-content" id="mainList">
-         <ul data-role="listview" data-inset="true" id="eventList">
-<!--
-             <li><a href="#download" data-transition="slide">List Item</a></li>
-             <li><a href="#download" data-transition="pop">List Item2</a></li>
--->
-         </ul>
+        <div id="navbar"></div>
+        <div id="navbarLog"></div>
+        <div id="imag"></div>
+        <div id="mainList">
+            <ul class="list" id="eventList">
+                
+            </ul>
         </div>
-        </div> 
-    
+        <button class="hidden" id="addEvent" onclick="location.href='createEvent.html'">Add Event</button>
         <script>
-            
-         $(document).ready(function(){ 
-         $.ajax({
-              url : 'https://api.parse.com/1/classes/Event',  
-              type : 'GET',
-              dataType: 'JSON',
-              contentType : 'application/json',
-              headers : {
-                'X-Parse-Application-Id' : 'YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804',    
-                'X-Parse-REST-API-Key' : '0WI42B9WJvdTG1p4iQDUMzirXrUapZKwxf139Icl'
-              },
-              error : function(data) {
-                console.log('error');
-              },
-              success : function(data) {
-                  loadEventList(data);
-              },
-              complete : function() {
-                  $('#eventList').listview('refresh'); 
-              }
+        $(document).ready(function () {
+            popEvents();
+//            $('.list').on('click', function(){
+//             $('#description').slideToggle("slow"); 
+//             });
+            $(document).on("click", "#eventElement", function() {
+//              //grab the objectID
+            var objectID = $(this).attr('class');
+            popMap(objectID);    
+            $('#'+objectID).slideToggle("slow");
+//            alert(objectID);
             });
-         //$('#eventList').trigger('create');
-         });
-            
-        function loadEventList(data){
-
-          for(var i=0; i<data.results.length;i++){
-            var event = data.results[i];
-            $('#eventList').append('<li><a href="#">' +event.title+ '</a></li>');     
-            
-            }//end of for-loop
-            
-          }//end of load events
-        </script>
+            showButton();
+        });
         
+        function popEvents(){
+            $.ajax({
+                url: 'https://api.parse.com/1/classes/Event',
+                type: 'GET',
+                dataType: 'JSON',
+                contentType: 'application/json',
+                headers: {
+                    'X-Parse-Application-Id': 'YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804',
+                    'X-Parse-REST-API-Key': '0WI42B9WJvdTG1p4iQDUMzirXrUapZKwxf139Icl'
+                },
+                error: function (data) {
+                    console.log('error');
+                },
+                success: function (data) {
+                    loadEventList(data);
+                },
+                complete: function () {
+                    $('#eventList').listview('refresh');
+                }
+            });
+        }
+
+        function loadEventList(data) {
+
+            for (var i = 0; i < data.results.length; i++) {
+                var event = data.results[i];
+//                var gMap = popMap(event.objectId);
+                
+                $('#eventList').append('<div id="eventElement" class="' +event.objectId+ '">'+ event.title +'</div>' + 
+                                        '<div id="' +event.objectId+ '" class="description">'+event.description +
+                                       '<div id="map-'+event.objectId+'" class="map"></div>'+'</div><br>');
+    
+
+            } //end of for-loop
+
+        } //end of load events
+        
+        function popMap(id){
+            var map;
+            var Event = Parse.Object.extend("Event");
+            var query = new Parse.Query(Event);
+            query.get(id, {
+                success: function(event){
+                    var loc = new Parse.GeoPoint(event.get("location"));
+                    function initialize(){
+                        var latlng = new google.maps.LatLng(loc.latitude, loc.longitude);
+                        var mapOptions = {
+                            zoom: 15,
+                            center: latlng,
+                            disableDefaultUI: true
+                        };
+                        map = new google.maps.Map(document.getElementById('map-'+id), mapOptions);
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            map: map
+                        });
+                    }
+                 window.onload(initialize());   
+                }//end of success
+            
+            });//end of query
+        }
+    </script>
     </body>
 </html>

@@ -41,3 +41,36 @@ function loggedout(){
 				Parse.User.logOut();
 				location.href = "inspire.html";
 };
+function showButton(){
+    var currUser = Parse.User.current();
+    var admin = currUser.get("superUser");
+    if(currUser != null && admin == true){
+        $("#addEvent").attr('class',"");
+    }
+};
+function createEvent(){
+    var Event = Parse.Object.extend("Event");
+    var newEvent = new Event();
+    var title = document.getElementById("title").value;
+    var address = document.getElementById("address").value;
+    var desc = document.getElementById("description").value;
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'address': address},function(result){
+        var latitude = result[0].geometry.location.lat();
+        var longitude = result[0].geometry.location.lng();
+        var point = new Parse.GeoPoint({latitude: latitude, longitude: longitude});
+        newEvent.set("title", title);
+        newEvent.set("address", address);
+        newEvent.set("description", desc);
+        newEvent.set("location", point);
+        newEvent.save(null, {
+            success: function(newEvent){
+                alert("Event added.");
+                location.href = "events.html";
+            },
+            error: function(newEvent, error){
+                alert("Failed to create event.")
+            }
+        });
+    });
+}
