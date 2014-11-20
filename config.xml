@@ -20,6 +20,4 @@
     <icon src="icon.png" />
     <gap:splash src="splash.png" gap:platform="android" gap:qualifier="xhdpi" />
     
-    
-    
 </widget>
