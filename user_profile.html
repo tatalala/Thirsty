@@ -140,13 +140,13 @@
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Password:</label>
                                       <div class="col-md-8">
-                                        <input class="form-control" id="pwID" type="password" placeholder="password"></input>
+                                        <input class="form-control" password id="pwID" type="password" placeholder="password"></input>
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Confirm password:</label>
                                       <div class="col-md-8">
-                                        <input class="form-control" name="password" id="cpwID" type="password" placeholder="password"></input>
+                                        <input class="form-control" required id="cpwID" type="password" placeholder="password"></input>
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -174,7 +174,7 @@
         <script type="text/javascript">
             Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
 
-            loadImage();
+            //loadImage();
 
             $(function(){
                     $("#navbarLog").load("navbarLog.html");   
@@ -185,13 +185,11 @@
                 
                     $("#upload").click(function(){
                         $("#imageID").click();
-                        // $("#imageID").change(function(){
-                        //     readURL(this);
-                        // });
+                        
                     });
 
                     retrieveUserInfo();
-
+                    loadImage();
             })
 
             function update(){
@@ -232,15 +230,19 @@
                                 update.set("password", pw);                        
                                 update.set("grade", grade);                        
                                 update.set("location", location);
-                                update.save();
-                            
-                                window.location.reload(true);
-               
+                                update.save().then(function(){
+
+                                    alert("Profile updated!");
+                                    retrieveUserInfo();
+                                    loadImage();
+                                });
+                                
                             }
                             else
                             {
                                 alert("You did not change your info");
                             }
+                            
 
                         }
                         else
@@ -294,7 +296,7 @@
                         cpwField.innerHTML = rPassword;    
                         email.innerHTML =  rEmail; 
 
-                        var fullName = rFname.concat(" " + rLname);
+                        var fullName = rFname + " " + rLname;
 
                         //set general info field
                         document.getElementById("gFnameID").innerHTML = fullName;
