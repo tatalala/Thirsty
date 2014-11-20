@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <title>Index</title>
+    <title>Index</title>
 
-  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
 
-  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-  <script src='js/jquery-2.1.1.js'></script>
-  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
-  <script src='js/parse.min.js'></script>
-<script src="js/script.js"></script>
-  
-</head>
-
-
-<body>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <script src='js/jquery-2.1.1.js'></script>
+    <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+    <script src='js/parse.min.js'></script>
+  <script src="js/script.js"></script>
     
-    
-   
-    
-  <script>
-//    Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-//    var currentUser = Parse.User.current();
-//    $(function(){
-//        if (currentUser)
-//        {
-//            $("#navbarLog").load("navbarLog.html");
-//            
-//        }
-//        else
-//            $("#navbar").load("navbar.html");
-//    });
-      
+  </head>
+
+
+  <body>
+    <script>
       window.location.replace("inspire.html");
-      
     </script>
   
-    </body>
+  </body>
 </html>
 
 <script>
@@ -52,16 +35,43 @@
 		alert("Device is Ready");
 
 	}
-//What to do when paused
-function onPause(){
-	
-	alert("paused!");
-}
+  //What to do when paused
+  function onPause(){
+  	
+  	alert("paused!");
+  }
 
-//What to do when resumed
-function onResume()
-{
-	
-	alert("resume");
-}
+  //What to do when resumed
+  function onResume()
+  {
+  	
+  	alert("resume");
+  }
+
+  function onCreate() 
+  {
+    Parse.initialize(this, "YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "hcqiTOGKd1oU8tMOmAktohi9zYlHU99qA6tPD4kv");
+    // Also in this method, specify a default Activity to handle push notifications
+    PushService.setDefaultPushCallback(this, YourActivity.class);
+  }
+
+  Parse.Push.send(
+  {
+    channels: [ "Giants", "Mets" ],
+    data: 
+    {
+      alert: "The Giants won against the Mets 2-3."
+    }
+  }, 
+  {
+    success: function() {
+      // Push was successful
+      alert("successful");
+    },
+    error: function(error) {
+      // Handle error
+      alert("failed!");
+  }
+});
+
 </script>
