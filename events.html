@@ -48,6 +48,55 @@
             $('#'+objectID).slideToggle("slow");
 //            alert(objectID);
             });
+            $(document).on("click", "#rsvp", function(){
+                var oID = $(this).attr('class');
+                //alert(oID);
+                var logIn = Parse.User.current();
+                if(logIn){
+                //alert("logged in");
+                 var user = Parse.Object.extend("User");
+                 var currUser = Parse.User.current();
+                 var query = new Parse.Query(user);
+                 var currUserID = currUser.id;
+                 //alert(currUserID);
+                 query.get(currUserID, {
+                    success: function(retrieve){
+                      var preRsvp = retrieve.get("rsvp");
+                        //alert(preRsvp);
+                        var split = preRsvp.split(",");
+                        var check = false;
+                        for(var i=0; i<split.length; i++)
+                        {
+                            var kay = split[i];
+                            
+                            
+                            if(kay == oID)
+                            {
+                                check = true; 
+                            }
+                        }
+                        
+                        if(check==true){
+                            alert("You have already rsvp to this event");
+                        }else{
+                          var newRsvp = preRsvp + oID +",";
+                          retrieve.set("rsvp", newRsvp);
+                          retrieve.save();
+                            alert("Your rsvp has been set");
+                        }
+                        
+                    },
+                    error: function(object, error){
+                        console.log(err.message);
+                        alert("Could not retrieve your information!");
+                        }
+                 });//end query
+                }//end if
+                 else{
+                 alert("We dont know who you are. Please sign in to continue");
+                 }
+            });
+            
             showButton();
         });
         
@@ -77,41 +126,48 @@
 
             for (var i = 0; i < data.results.length; i++) {
                 var event = data.results[i];
-//                var gMap = popMap(event.objectId);
-                
-                $('#eventList').append('<div id="eventElement" class="' +event.objectId+ '">'+ event.title +'</div>' + 
-                                        '<div id="' +event.objectId+ '" class="description">'+event.description +
-                                       '<div id="map-'+event.objectId+'" class="map"></div>'+'</div><br>');
-    
+
+                $('#eventList').append('<div id="eventElement" class="' + event.objectId + '">' + event.title + '</div>' +
+                                       '<div id="'+event.objectId+'"class="hiddenDescription"><br>'+     
+                                       '<div id="eventImage"><img id="img-' + event.objectId +'" class="imgclass" src="">'   +            
+                                       '<div id="' + event.objectId + '" class="description">' + event.description + 
+                                       '<div id="map-' + event.objectId + '" class="map"></div>'+
+                                       '<button type="button" class="' +event.objectId+ '" id="rsvp">RSVP</button></div></div></div><br>');
+
 
             } //end of for-loop
 
         } //end of load events
-        
-        function popMap(id){
+
+        function popMap(id) {
             var map;
             var Event = Parse.Object.extend("Event");
             var query = new Parse.Query(Event);
             query.get(id, {
-                success: function(event){
+                success: function (event) {
                     var loc = new Parse.GeoPoint(event.get("location"));
-                    function initialize(){
+                    var image = event.get("image").url();
+                    $("#img-"+id).attr('src', image);
+                    function initialize() {
                         var latlng = new google.maps.LatLng(loc.latitude, loc.longitude);
                         var mapOptions = {
                             zoom: 15,
                             center: latlng,
                             disableDefaultUI: true
                         };
-                        map = new google.maps.Map(document.getElementById('map-'+id), mapOptions);
+                        map = new google.maps.Map(document.getElementById('map-' + id), mapOptions);
                         var marker = new google.maps.Marker({
                             position: latlng,
                             map: map
-                        });
-                    }
-                 window.onload(initialize());   
-                }//end of success
+                        });                        
+                    }                    
+                    window.onload(initialize());
+                    
+                } //end of success      
+
+            }); //end of query
             
-            });//end of query
+            
         }
     </script>
     </body>
