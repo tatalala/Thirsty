@@ -1,3 +1,6 @@
+html,body{
+    overflow: auto;
+}
 #content{
     vertical-align: middle;
 	width: 75%;
