@@ -72,8 +72,13 @@
                         </form>
                     </div>
                     <div class="tab-pane center" id="events">
-                        <h1>Events</h1>
-                        <p class="center">To be update</p>
+                        <h1>Your Events</h1>
+                        <!-- <p class="center">To be update</p> -->
+                        <div class="container-fluid">
+                            <div id="gInfoID" class="row col-lg-8">
+                                <div class="center" id="eNameID"></div>
+                            </div>
+                        </div>  
                     </div>
                     <div class="tab-pane" id="edit">
                         <h1>Edit Profile</h1>
@@ -190,6 +195,7 @@
 
                     retrieveUserInfo();
                     loadImage();
+                    retrieveEvent();
             })
 
             function update(){
@@ -336,6 +342,48 @@
                         alert("Could not retrieve your iamge! :(");
                     }
                 });        
+            }
+
+            // alert for events
+            function eventAlert()
+            {
+                alert("hello from events");
+            }
+
+            function retrieveEvent(){
+                var User = Parse.Object.extend("User");
+                var currentUser = Parse.User.current();
+                var query= new Parse.Query(User);
+                var currentUserID = currentUser.id;
+                
+                query.get(currentUserID,{
+                    success: function(theEvent){
+                        // get rsvp from user
+                        var eRSVP = theEvent.get("rsvp");
+                        eRSVP = eRSVP.split(",");
+                        
+                        document.getElementById("eNameID").innerHTML = "";
+                        for(var i=0; i<eRSVP.length;i++){
+
+                            var Event = Parse.Object.extend("Event");
+                            var queryEvent= new Parse.Query(Event);
+                            queryEvent.get(eRSVP[i], {
+                                success: function(event){
+                                    var temp = document.getElementById("eNameID").innerHTML;
+                                    document.getElementById("eNameID").innerHTML = temp +event.get("title") + "<br/>" ;
+                                },
+                                error: function(query, error){
+                                   
+                                }
+                            });
+                        }//end for
+
+                    },
+                    error: function(query, error){
+                        alert("Could not retrieve your information! :(");
+                   
+                        }
+                    });
             }
             
             function updateImage(){
