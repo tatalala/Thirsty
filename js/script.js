@@ -19,10 +19,14 @@ function signUp(){
   var user = new Parse.User();
   var confirmPass = document.getElementById('confirmpass').value;
   var userPass =  document.getElementById('userpass').value;
+  var lName = document.getElementById('lname').value;
+  var fName = document.getElementById('fname').value;
   if(confirmPass == userPass){
       user.set("username", document.getElementById('a').value);
       user.set("password", userPass);
       user.set("email", document.getElementById('c').value);
+      user.set("fname",fName);
+      user.set("lname",lName);
       user.signUp(null,{
         success: function(user){
           location.href = 'user_profile.html';
@@ -72,5 +76,23 @@ function createEvent(){
                 alert("Failed to create event.")
             }
         });
+    });
+}
+function userPicture(){
+    var photoURL = "";
+    var User = Parse.Object.extend("User");
+    var currentUser = Parse.User.current();
+    var query= new Parse.Query(User);
+    var currentUserID = currentUser.id;
+
+    query.get(currentUserID, {
+        success: function(profile){
+            var photo = profile.get("img"); 
+            photoURL = photo.url();
+            $('#navImageID')[0].src = photoURL;
+        }, 
+        error: function(object, error){
+            navigator.notification.alert("Could not retrieve your iamge! :(");
+        }
     });
 }

@@ -28,7 +28,7 @@ html,body{
 	margin: 15px 0;
 	width: 100%;
 }
-input[type="username"],[type="password"],[type="email"]{
+input{
     background-color: #fff;
 	border: 1px solid #c7d0d2;
 	border-radius: 3px;
