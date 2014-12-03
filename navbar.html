@@ -17,26 +17,14 @@
     </head>
 
     <body>
-        <div id='header'>
-            <label for='menu-checkbox' id='menu-btn' class="navbar-brand">
-                <span id='three-lines'>&#8801;</span>
+        <input class='menu-checkbox' type='checkbox' id="menuCheckbox">
+        <div class='header'>
+            <label for='menuCheckbox' id='menu-btn' class="navbar-brand">
+                <span class='three-lines'></span> 
                 <img id="logo" src="assets/blacklogo.png">
-                <span id="current_url"></span>
-                <!-- Query tittle for navbar display -->
-                <script  type="text/javascript">
-                    jQuery(document).ready(function() {
-                    var href = jQuery(location).attr('href');
-                    var url = jQuery(this).attr('title');
-                    jQuery('#current_title').html(href);
-                    jQuery('#current_url').html(url);
-                    });
-                </script>
-
-                <br/>
             </label>
+            <span id="current_url"></span>
         </div>
-
-        <input id='menu-checkbox' type='checkbox'>
         <nav id='menu'>
             <div id='login-div'>
                 <div id="mySlideToggler">
@@ -85,6 +73,12 @@
                 $(this).toggleClass('#mySlideContent');
                 return false;
                 });
+            });
+            jQuery(document).ready(function() {
+                var href = jQuery(location).attr('href');
+                var url = jQuery(this).attr('title');
+                jQuery('#current_title').html(href);
+                jQuery('#current_url').html(url);
             });
 		</script>
     </body>

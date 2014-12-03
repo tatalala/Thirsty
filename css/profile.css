@@ -85,7 +85,11 @@ body{
  }
 
 .img-circle {
-  border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background: url(../assets/profile-icon.png)no-repeat;
+	background-size: 100%;
+    border-radius: 50%;
 }
 
 .navigation li {

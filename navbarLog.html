@@ -14,37 +14,26 @@
 	</head>
 	
 	<body>
-		<div id='header'>
-		  	<label for='menu-checkbox' id='menu-btn' class="navbar-brand">
-		    	<span id='three-lines'>&#8801;</span>
+		<input class='menu-checkbox' type='checkbox' id="menuCheckbox">
+		<div class='header'>
+		  	<label for='menuCheckbox' id='menu-btn' class="navbar-brand">
+		    	<span class='three-lines'></span>
 		    	<img id="logo" src="assets/blacklogo.png">
-		    	<span id="current_url"></span>
-		    	<script  type="text/javascript">
-                    jQuery(document).ready(function() {
-                    var href = jQuery(location).attr('href');
-                    var url = jQuery(this).attr('title');
-                    jQuery('#current_title').html(href);
-                    jQuery('#current_url').html(url);
-                    });
-                </script>
 		  	</label>
+			<span id="current_url"></span>
 		</div>
-
-		<input id='menu-checkbox' type='checkbox'>
 		<nav id='menu'>
 
 			<div id='login-div'>
-			<div id="mySlideToggler">
-				<a>Welcome</a>
-			</div>
-			<div id="mySlideContent">
+                <div class="user-bg">
+					<img id="navImageID" src="" class="user-pic">
+                </div>
 				<form name="LogOut" method="get">
                     <fieldset>
 						<button type="button" onclick="location.href='user_profile.html'">Profile</button>
                         <button type="button" onclick="loggedout()"> Log Out </button>
                     </fieldset>
                 </form>
-			</div>
 			</div>
 
 		    <div id='menu-btn'>
@@ -75,6 +64,13 @@
 				return false;
 				});
 			});
+            jQuery(document).ready(function() {
+                var href = jQuery(location).attr('href');
+                var url = jQuery(this).attr('title');
+                jQuery('#current_title').html(href);
+                jQuery('#current_url').html(url);
+                userPicture();
+            });
 		</script>
 
 
