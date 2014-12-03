@@ -21,20 +21,6 @@
 		We position the images fixed and therefore need to place them outside of #skrollr-body.
 		We will then use data-anchor-target to display the correct image matching the current section (.gap element).
 	-->
-	
-	<script>
-		//Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-      	var currentUser = Parse.User.current();
-		$(function(){
-			if(currentUser){
-				$("#navbarLog").load("navbarLog.html");
-			}
-			else{
-				$("#navbar").load("navbar.html");
-			}
-        	
-      	});
-    </script>
 
 	<div id="navbar"></div>
 	<div id="navbarLog"></div>
@@ -66,15 +52,12 @@
 
 		<div
 			class="parallax-image parallax-image-100"
-			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17.jpg)"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17.jpg);"
 			data-anchor-target="#bacons + .gap"
 			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
 			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
 		></div>
 	</div>
-
-
-
 
 	<div
 		class="parallax-image-wrapper parallax-image-wrapper-100"
@@ -84,7 +67,7 @@
 
 		<div
 			class="parallax-image parallax-image-100"
-			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg)"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg);"
 			data-anchor-target="#kittens + .gap"
 			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
 			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
@@ -100,7 +83,7 @@
 
 		<div
 			class="parallax-image parallax-image-100"
-			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775.jpg)"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775.jpg);"
 			data-anchor-target="#testings + .gap"
 			data-bottom-top="transform: translate3d(0px, -80%, 0px);"
 			data-top-bottom="transform: translate3d(0px, 80%, 0px);"
@@ -111,12 +94,11 @@
 
 	<div id="skrollr-body">
 
-
 		<div class="header" id="dragons">
             <h1>The Thirst Project</h1>
-            <p>To learn more about the Thirst Project</p><h3>Please Scroll Down</h3> <i class="fa fa-chevron-down fa-4x"></i> <br>
+            <p>To learn more about the Thirst Project</p><h3>Please Scroll Down</h3> <i class="fa fa-angle-double-down fa-4x"></i> <br>
 		</div>
-		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/12/314978_10100121018724858_55712109_43971788_463838510_n.jpg); height:"></div>
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/12/314978_10100121018724858_55712109_43971788_463838510_n.jpg); height: 80%;"></div>
 		<div class="content" id="bacons">
 			<br>
 			<b><em>Did you know?</em></b>            
@@ -125,7 +107,7 @@
 
 
 
-		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17.jpg);"></div>
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17.jpg); height: 90%;"></div>
 		<div class="content" id="kittens">
 			<br>
             <h2>The Solution</h2>
@@ -134,24 +116,39 @@
 
 
 
-		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg);"></div>
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/05/IMG_8087.jpg); height: 100%"></div>
 		<div class="content" id="testings">
 			<br>
 			<h2>Take Action</h2>
             <p>“Love requires action.” Were not just about feeling good, we’re about doing good. Awareness, hype and excitement are great, but only if they result in lives changed. We believe everyone has the ability to do something and make an impact in this issue, no matter how young or old. We’ve seen power in low-level donations in large numbers, students and youth rallying together, volunteers uniting in compassion and corporate sponsors giving radically. <br><em><b>Now it’s YOUR turn!</b></em><br><b>Donate:</b> as little as $20 can provide one person with safe, clean water for twenty or more years! Give compassionately. Change a life. Give $20 a month. <b>Volunteer:</b> be a part of the Thirst family and involved in every aspect of the organization. <b>Raise Awareness:</b> knowing is half the battle, create an account with our app today to stay informed and be notified of events in your area.</p> <br>
 		</div>
 
-		<div class="gap gap-100"  style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775.jpg);"></div>
+		<div class="gap gap-100"  style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775.jpg); height: 100%; "></div>
+
 	</div>
 
- <script type="text/javascript" src="js/skrollr.js"></script>
-	<script type="text/javascript">
-	skrollr.init({
-		smoothScrolling: false,
-		mobileDeceleration: 0.0003
-	});
-	</script>
+	 	<script type="text/javascript" src="js/skrollr.js"></script>
+		<script type="text/javascript">
+			skrollr.init({
+				smoothScrolling: false,
+				mobileDeceleration: 0.0005
+			});
+		</script>
 
-</body>
+	</body>
+
+	<script>
+		//Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
+      	var currentUser = Parse.User.current();
+		$(function(){
+			if(currentUser){
+				$("#navbarLog").load("navbarLog.html");
+			}
+			else{
+				$("#navbar").load("navbar.html");
+			}
+        	
+      	});
+    </script>
 
 </html>
