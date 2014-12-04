@@ -1,25 +1,87 @@
-img.imagemedia{
-	display: block;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+}
+a:link,
+a:visited {
+    color: #000000 !important;
+    text-decoration: none;
+    cursor: auto;
+}
+a:link:active,
+a:visited:active {
+    color: #629ca1 !important;
+}
+#mediaList {
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 0px;
+}
+#mediaElement {
+    padding-top: 1%;
+    border-color: #629ca1 !important;
+    background-color: white;
+    border-radius: 6px;
+    border: 3px solid #ccc;
+    text-align: center;
+    /*
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+*/
+}
+.hiddenDescription {
+    display: none;
+    padding-top: 5px;
+    border-color: #629ca1 !important;
+    background-color: white;
+    border-radius: 6px;
+    border: 3px solid #ccc;
+    text-align: center;
+}
+.description {
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.imgclass {
+    width: 100%;
+    align-content: center;
+}
+#mediaTitle {} #imag {
+    background: url("http://www.thirstproject.org/wp-content/uploads/2012/04/Lucy-Chien-1.jpg") no-repeat top center fixed;
+    background-size: contain;
+    background-position: 100% 40px;
+    height: 35%;
+}
+.hidden {
+    display: none;
+}
+img.imagemedia {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-        width: 25%;
-	height: 25%;
+    width: 25%;
+    height: 25%;
 }
 }
-
 .video {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 20px;
-	height: 0;
-	overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 20px;
+    height: 0;
+    overflow: hidden;
 }
-.video iframe,  
-.video object,  
+.video iframe,
+.video object,
 .video embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
