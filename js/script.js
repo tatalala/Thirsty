@@ -90,6 +90,7 @@ function createMedia() {
     var title = document.getElementById("title").value;
     var desc = document.getElementById("description").value;
     var youtubeId = document.getElementById("youtubeId").value;
+<<<<<<< HEAD
     newMedia.set("title", title);
     newMedia.set("description", desc);
     newMedia.set("youtubeId", youtubeId);
@@ -102,6 +103,20 @@ function createMedia() {
             alert("Failed to create media content.")
         }
     });
+=======
+        newEvent.set("title", title);
+        newEvent.set("description", desc);
+        newEvent.set("youtubeId", youtubeId);
+        newEvent.save(null, {
+            success: function(newMedia){
+                alert("Media Content added.");
+                location.href = "media.html";
+            },
+            error: function(newMedia, error){
+                alert("Failed to create media content.")
+            }
+        });
+>>>>>>> 5d1a680072fe9dbd8ad0b57032f33c97cf198eb5
 }
 
 function userPicture() {
