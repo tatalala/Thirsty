@@ -22,6 +22,7 @@
             } else {
                 $("#navbar").load("navbar.html");
             }
+                $("#socialBtns").load("socialBtns.html");
         });
     </script>
     <div id="navbar"></div>
@@ -32,8 +33,9 @@
 
         </ul>
     </div>
-    <button class="hidden" id="addMedia" onclick="location.href='
-createMedia.html '">Add Media</button>
+    <button class="hidden" id="addMedia" onclick="location.href='createMedia.html '">Add Media</button>
+    <div id= "socialBtns"></div>
+
     <script>
         $(document).ready(function () {
 
@@ -78,7 +80,9 @@ createMedia.html '">Add Media</button>
                 $('#mediaList').prepend(
                     '<div id="mediaElement" class="' + media.objectId + '">' + media.title + '</div>' +
                     '<div id="' + media.objectId + '"class="hiddenDescription">' +
-                    '<div id="' + media.objectId + '" class="description">' + media.description + '</div></div><br>');
+                    '<div id="' + media.objectId + '" class="description">' + media.description +
+                    '</div><div class="embed-video"><iframe width="350" height="315" src="//www.youtube.com/embed/' + media.video + '" frameborder="0" allowfullscreen></iframe>' +
+                    '</div></div><br>');
 
 
             } //end of for-loop
