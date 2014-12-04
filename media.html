@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <title>Media</title>
     <link rel='stylesheet prefetch' href='http:/ / fonts.googleapis.com / css ? family = Roboto + Condensed : 300 '>
+    <link rel="stylesheet" href="css/about.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/media.css" media="screen" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="css/createEvent.css">
+
     <script src="js/parse.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/jquery-2.1.1.js"></script>
@@ -22,19 +25,23 @@
             } else {
                 $("#navbar").load("navbar.html");
             }
-                $("#socialBtns").load("socialBtns.html");
+            $("#socialBtns").load("socialBtns.html");
+
         });
     </script>
     <div id="navbar"></div>
     <div id="navbarLog"></div>
-    <div id="imag"></div>
+    <div id="image"></div>
     <div id="mainList">
         <ul class="list" id="mediaList">
 
         </ul>
+
     </div>
     <button class="hidden" id="addMedia" onclick="location.href='createMedia.html '">Add Media</button>
-    <div id= "socialBtns"></div>
+    <br>
+    <br>
+    <div id="socialBtns"></div>
 
     <script>
         $(document).ready(function () {

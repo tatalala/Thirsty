@@ -214,7 +214,7 @@ form fieldset button {
     width: 100px;
     -webkit-appearance: none;
 }
-button[id="addEvent"]{
+button[id="addEvent"],[id="addMedia"]{
     float: right;
     margin-right: 10%;
     background-color: #33acaf;
