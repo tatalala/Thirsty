@@ -151,7 +151,11 @@
                         var mapOptions = {
                             zoom: 15,
                             center: latlng,
-                            disableDefaultUI: true
+                            disableDefaultUI: true,
+                            disableDoubleClickZoom: true,
+                            draggable: false,
+                            scrollwheel: false,
+                            panControl: false
                         };
                         map = new google.maps.Map(document.getElementById('map-' + id), mapOptions);
                         var marker = new google.maps.Marker({
