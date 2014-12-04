@@ -38,15 +38,13 @@
         <script>
         $(document).ready(function () {
             popEvents();
-//            $('.list').on('click', function(){
-//             $('#description').slideToggle("slow"); 
-//             });
+
             $(document).on("click", "#eventElement", function() {
-//              //grab the objectID
+
             var objectID = $(this).attr('class');
             popMap(objectID);    
             $('#'+objectID).slideToggle("slow");
-//            alert(objectID);
+
             });
             $(document).on("click", "#rsvp", function(){
                 var oID = $(this).attr('class');
@@ -129,7 +127,7 @@
 
                 $('#eventList').prepend('<div id="eventElement" class="' + event.objectId + '">' + event.title + '</div>' +
                                        '<div id="'+event.objectId+'"class="hiddenDescription"><br>'+     
-                                       '<div id="eventImage"><img id="img-' + event.objectId +'" class="imgclass" src="">'   +            
+                                       '<div id="eventImage"><img id="img-' + event.objectId +'" class="imgclass" src="assets/Thirst.jpg">'   +            
                                        '<div id="' + event.objectId + '" class="description">' + event.description + 
                                        '<div id="map-' + event.objectId + '" class="map"></div>'+
                                        '<button type="button" class="' +event.objectId+ '" id="rsvp">RSVP</button></div></div></div><br>');
@@ -146,23 +144,26 @@
             query.get(id, {
                 success: function (event) {
                     var loc = new Parse.GeoPoint(event.get("location"));
-                    var image = event.get("image").url();
-                    $("#img-"+id).attr('src', image);
                     function initialize() {
                         var latlng = new google.maps.LatLng(loc.latitude, loc.longitude);
                         var mapOptions = {
                             zoom: 15,
                             center: latlng,
-                            disableDefaultUI: true
+                            disableDefaultUI: true,
+                            disableDoubleClickZoom: true,
+                            draggable: false,
+                            scrollwheel: false,
+                            panControl: false
                         };
                         map = new google.maps.Map(document.getElementById('map-' + id), mapOptions);
                         var marker = new google.maps.Marker({
                             position: latlng,
                             map: map
-                        });                        
+                        });
+                        var image = event.get("image").url();
+                        $("#img-"+id).attr('src', image);
                     }                    
                     window.onload(initialize());
-                    
                 } //end of success      
 
             }); //end of query

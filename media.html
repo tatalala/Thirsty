@@ -1,132 +1,95 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Media</title>
+<html lang="eng">
 
-	  <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
+<head>
+    <meta charset="UTF-8">
+    <title>Media</title>
+    <link rel='stylesheet prefetch' href='http:/ / fonts.googleapis.com / css ? family = Roboto + Condensed : 300 '>
+    <link rel="stylesheet" href="css/master.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="css/media.css" media="screen" type="text/css" />
-    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300'>
-    <script src='js/jquery-2.1.1.js'></script>
     <script src="js/parse.min.js"></script>
     <script src="js/script.js"></script>
-  </head>
-    <!--stub comment-->
-  <body>
+    <script src="js/jquery-2.1.1.js"></script>
+</head>
+<!--stub comment-->
+
+<body>
     <script>
-      //Parse.initialize("YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804", "o5kLLsJQTT4Xc5yR4FlQHngF31txDtfXDnTREq1C");
-      	var currentUser = Parse.User.current();
-		$(function(){
-			if(currentUser){
-				$("#navbarLog").load("navbarLog.html");
-			}
-			else{
-				$("#navbar").load("navbar.html");
-			}
-        	$("#socialBtns").load("socialBtns.html");
-      	});
-      </script>
-      <div id="navbar"></div>
-      <div id="navbarLog"></div>
-    <br>
- 
-      
-    <div id='content'>
-        
-        <ul id='items'>
-        <li>
-          <div class="post text-center" id="post-794">
-    		    <h1>BLOG: ‘NCIS’ Star Pauley Perrette Gets Special Thanks From Swaziland</h1>
-            <div class="entry">
+        var currentUser = Parse.User.current();
+        $(function () {
+            if (currentUser) {
+                $("#navbarLog").load("navbarLog.html");
+            } else {
+                $("#navbar").load("navbar.html");
+            }
+                $("#socialBtns").load("socialBtns.html");
+        });
+    </script>
+    <div id="navbar"></div>
+    <div id="navbarLog"></div>
+    <div id="imag"></div>
+    <div id="mainList">
+        <ul class="list" id="mediaList">
 
-    				  <img class="imagemedia" title="Pauley Perrette At The 2nd Annual Thirst Gala For Thirst Project" src="http://www.thirstproject.org/wp-content/uploads/2012/05/Pauley-Perrette-Photos-The-2nd-Annual-Thirst-Project-Gala-Zimbio-187x300.jpg" alt="" width="187" height="300">
-
-              <p>
-              <strong>Thirst Project</strong> is lucky to have a lot of celebrities on board with our cause, but few are as dedicated as “<strong>NCIS”</strong>&nbsp;beauty Pauley Perrette. Now she’s getting recognized personally for her generous donations towards our efforts in Swaziland!
-              </p>
-              <p>The actress, who plays quirky <strong>Abby Sciutoon</strong> the show, has not been shy about speaking out about Thirst Project and pitching in from her own wallet to help build wells all over the world. At left, you can see her at last year’s Thirst Gala. In a recent video, Swazi women show what they used to do by gathering dirty water from a nearby stream. Then, it’s smiles and laughter all around as fresh, clean h10 sprays out of their new well. The people of <strong>Nkamanzi, Swaziland</strong> say “Thank you, Pauley P.” and so do we!<br></p> 
-
-              <div class="video">
-                <iframe src="http://www.youtube.com/embed/9xQPiHsin1Y" frameborder="0" width="600" height="335"></iframe>
-              </div>
-
-              <li>
-                <div class="post text-center" id="post-622">
-            		  <h1>BLOG: We don’t just work in Africa… (Part 2: Colombia)</h1>
-            			<div class="entry">
-                    <div class="video">
-                      <iframe width="620" height="345" src="http://www.youtube.com/embed/_gKnmuqtY9I?hd=1" frameborder="0" allowfullscreen=""></iframe>
-                    </div>
-                      <p>Check out what we are doing in Colombia.</p>	
-            			</div>
-          		  </div>
-              </li>
-                    
-              <li>
-                <div class="post text-center" id="post-474">
-        		      <h1>MTV’s “Teen Wolf” Cast Funds Uganda Well</h1>
-                  <div class="entry">
-                    <div class="video">
-                      <iframe width="620" height="345" src="http://www.youtube.com/embed/tGGIJdW4zIw?hd=1" frameborder="0" allowfullscreen=""></iframe>
-                    </div>
-                      <p>The Cast of MTV’s “Teen Wolf” funded this Thirst Project fresh water well at the Bethlehem Parents School and Orphanage in Rakai, Uganda. This video was created by The Thirst Project Media Team to report back to the cast on their completed well, and shows the school’s water source before the well was built, as well as the finished project.</p>
-                  </div>
-        		    </div>         
-              </li>
-                    
-              <li>
-                <div class="post text-center" id="post-204">
-          		    <h1>Michael Welch’s 5 Buck Club</h1>
-                  <div class="entry">
-          				  <div class="video">
-                      <iframe src="http://player.vimeo.com/video/17454999?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="619" height="351" frameborder="0"></iframe>
-                    </div>
-                              
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                      <input type="hidden" name="cmd" value="_s-xclick"><br>
-                      <input type="hidden" name="hosted_button_id" value="68GGEMHWCZVMS">
-                      <!-- <tbody> -->
-                      
-        <tr>
-                          <td> 
-          					         <input style="text-align:center;" type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                <center>
-                                  <h5 style="color: #FFF47F;"><em>Your donation is a one-time <br> contribution and is very much appreciated. <br> Thank you for helping us change the world!</em></h5>
-                                </center>
-                          </td>
-                        </tr>
-                        
-                        <tr>
-                          <td>
-                            <center>
-                              <h5><strong>Mail-in donation address:</strong>The Thirst Project
-                              <br>
-          						        ATTN: Michael Welch $5-Buck Club<br>
-          						        3611 Motor Avenue  Suite 200<br>
-          						        Los Angeles, CA 90034<br>
-                              </h5>
-                            </center>
-                          </td>
-                        </tr>
-                      <!-- </tbody> -->
-                    </form>	
-                  </div>
-          		  </div>           
-              </li>   		
-      		  </div> <!-- end class="entry"-->
-    		  </div>
-        </li>
-      </ul> <!--end id="item"-->
-    </div> <!--end id="content"-->
-
-  <br/>  
-
-    <div class="container">
-      <div class="text-center">
-        <h1>Follow Us!</h1>
-          <br/>
-          <div id="socialBtns"></div>
-      </div>
+        </ul>
     </div>
-  </body>
+    <button class="hidden" id="addMedia" onclick="location.href='createMedia.html '">Add Media</button>
+    <div id= "socialBtns"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            popMedia();
+
+            $(document).on("click", "#mediaElement", function () {
+                var objectID = $(this).attr('class');
+                $('#' + objectID).slideToggle("slow");
+            });
+
+            showButton();
+
+        });
+
+        function popMedia() {
+            $.ajax({
+                url: 'https://api.parse.com/1/classes/Media',
+                type: 'GET',
+                dataType: 'JSON',
+                contentType: 'application/json',
+                headers: {
+                    'X-Parse-Application-Id': 'YgscJuPF5n0Tab0kShVye4KdCKQZx8E3yzdC8804',
+                    'X-Parse-REST-API-Key': '0WI42B9WJvdTG1p4iQDUMzirXrUapZKwxf139Icl'
+                },
+                error: function (data) {
+                    console.log('error');
+                },
+                success: function (data) {
+                    loadMediaList(data);
+                },
+                complete: function () {
+                    $('#mediaList').listview('refresh');
+                }
+            });
+        }
+
+        function loadMediaList(data) {
+
+            for (var i = 0; i < data.results.length; i++) {
+                var media = data.results[i];
+
+                $('#mediaList').prepend(
+                    '<div id="mediaElement" class="' + media.objectId + '">' + media.title + '</div>' +
+                    '<div id="' + media.objectId + '"class="hiddenDescription">' +
+                    '<div id="' + media.objectId + '" class="description">' + media.description +
+                    '</div><div class="embed-video"><iframe width="350" height="315" src="//www.youtube.com/embed/' + media.video + '" frameborder="0" allowfullscreen></iframe>' +
+                    '</div></div><br>');
+
+
+            } //end of for-loop
+
+        } //end of load events
+    </script>
+
+</body>
+
 </html>
