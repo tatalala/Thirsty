@@ -58,6 +58,7 @@ a:visited:active {
 #mediaTitle {} #image {
     background: url("http://i.imgur.com/EYsg6kM.png") no-repeat top center fixed;
     background-size: contain;
+    background-size: 100%;
     background-position: 100% 40px;
     height: 20%;
 }

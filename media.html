@@ -79,7 +79,6 @@
         }
 
         function loadMediaList(data) {
-
             for (var i = 0; i < data.results.length; i++) {
                 var media = data.results[i];
 
@@ -87,7 +86,7 @@
                     '<div id="mediaElement" class="' + media.objectId + '">' + media.title + '</div>' +
                     '<div id="' + media.objectId + '"class="hiddenDescription">' +
                     '<div id="' + media.objectId + '" class="description">' + media.description +
-                    '</div><div class="embed-video"><iframe width="350" height="315" src="//www.youtube.com/embed/' + media.video + '" frameborder="0" allowfullscreen></iframe>' +
+                    '</div><div class="embed-video"><iframe width="350" height="315" src="http://www.youtube.com/embed/' +media.video+ '" frameborder="0" allowfullscreen></iframe>' +
                     '</div></div><br>');
 
 
