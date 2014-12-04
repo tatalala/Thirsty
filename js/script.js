@@ -96,7 +96,6 @@ function createMedia(){
                 alert("Failed to create media content.")
             }
         });
-    });
 }
 function userPicture(){
     var photoURL = "";
