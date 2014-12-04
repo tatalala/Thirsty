@@ -75,7 +75,7 @@ a:visited:active {
     background: url("http://www.thirstproject.org/wp-content/uploads/2012/04/Lucy-Chien-1.jpg") no-repeat top center fixed;
     background-size: contain;
     background-position: 100% 40px;
-    height: 35%;
+    height: 20%;
 }
 .hidden {
     display: none;

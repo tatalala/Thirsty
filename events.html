@@ -38,15 +38,13 @@
         <script>
         $(document).ready(function () {
             popEvents();
-//            $('.list').on('click', function(){
-//             $('#description').slideToggle("slow"); 
-//             });
+
             $(document).on("click", "#eventElement", function() {
-//              //grab the objectID
+
             var objectID = $(this).attr('class');
             popMap(objectID);    
             $('#'+objectID).slideToggle("slow");
-//            alert(objectID);
+
             });
             $(document).on("click", "#rsvp", function(){
                 var oID = $(this).attr('class');

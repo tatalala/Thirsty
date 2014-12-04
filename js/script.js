@@ -78,6 +78,26 @@ function createEvent(){
         });
     });
 }
+function createMedia(){
+    var Media = Parse.Object.extend("Media");
+    var newMedia = new Media();
+    var title = document.getElementById("title").value;
+    var desc = document.getElementById("description").value;
+    var youtubeId = document.getElementById("youtubeId").value;
+        newEvent.set("title", title);
+        newEvent.set("description", desc);
+        newEvent.set("youtubeId", youtubeId);
+        newEvent.save(null, {
+            success: function(newMedia){
+                alert("Media Content added.");
+                location.href = "media.html";
+            },
+            error: function(newMedia, error){
+                alert("Failed to create media content.")
+            }
+        });
+    });
+}
 function userPicture(){
     var photoURL = "";
     var User = Parse.Object.extend("User");
