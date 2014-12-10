@@ -71,9 +71,11 @@ a:visited:active {
     width: 100%;
     height: 250px;
 }
-#eventTitle {} #imag {
+#eventTitle {} 
+#imag {
     background: url("http://www.thirstproject.org/wp-content/uploads/2012/04/Lucy-Chien-1.jpg") no-repeat top center fixed;
     background-size: contain;
+    background-size: 100%;
     background-position: 100% 40px;
     height: 20%;
 }
