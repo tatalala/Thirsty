@@ -98,7 +98,7 @@
 		<div
 			class="parallax-image parallax-image-100"
 
-			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775-682x1024.jpg);background-position:center; position:fixed;"
+			style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775-682x1024.jpg);background-position:center; overflow:fixed;"
 			data-anchor-target="#testings + .gap"
 			data-bottom-top="transform: translate3d(0px, -250%, 0px);"
 			data-top-bottom="transform: translate3d(0px, 0%, 0px);"
@@ -123,7 +123,7 @@
 		</div>
 
 
-		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17-682x1024.jpg); height: 80%;"></div>
+		<div class="gap gap-100" id="lastSlide" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/04/17-682x1024.jpg); height: 80%;"></div>
 
 		<div class="content" id="kittens">
 			<br>
@@ -150,7 +150,9 @@
             <p><b>Donate:</b> as little as $20 can provide one person with safe, clean water for twenty or more years! Give compassionately. Change a life. Give $20 a month. <b>Volunteer:</b> be a part of the Thirst family and involved in every aspect of the organization. <b>Raise Awareness:</b> knowing is half the battle, create an account with our app today to stay informed and be notified of events in your area.</p><br>
 		</div>
 
-		<div class="gap gap-100"  style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775-682x1024.jpg); height: 70%; overflow: hidden; position: fixed;"></div>
+		<div class="gap gap-100" id="lastSlide" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775-682x1024.jpg); height: 70%; overflow: hidden; position: fixed;"></div>
+
+		<div class="gap gap-100" style="background-image:url(http://www.thirstproject.org/wp-content/uploads/2011/08/IMG_0775-682x1024.jpg); height: 70%; overflow: hidden; position: fixed;"></div>
 
 	</div>
 
@@ -162,6 +164,14 @@
 			smoothScrolling: false,
 			forceHeight:false,
 			mobileDeceleration: 0.0004
+		});
+
+		 $(window).scroll(function() {   
+		   if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+		       $(window).unbind('scroll');
+               // alert("im almost there");
+		       $( this ).scrollTop( 2900 );
+		   }
 		});
 	</script>
 
