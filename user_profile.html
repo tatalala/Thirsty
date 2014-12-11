@@ -13,6 +13,7 @@
         <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
         <script src="js/parse.min.js"></script>
         <script src="js/validator.js"></script>
+        <script src="js/cordova.js"></script>
         
     </head>
 
@@ -416,9 +417,15 @@
                           alert("Could not update image :(");
                         })
                 }
-
-                //location.reload();
             }
+
+            $("#imageID").on("click", function(e) {
+                e.preventDefault();
+                navigator.camera.getPicture(gotPic, failHandler, 
+                    {quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
+                     sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+            });
+
 
         </script>
 
